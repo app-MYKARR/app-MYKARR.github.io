@@ -113,12 +113,12 @@ footer nav a{color:var(--muted);text-decoration:none;margin-right:14px}
   <div class="fb">
     <h2 data-t="fbH">Tu esi viens no pirmajiem</h2>
     <p data-t="fbP">Pastāsti, kas patīk, kas kaitina un kā tev pietrūkst. Katra ziņa tiek izlasīta.</p>
-    <a class="btn" href="mailto:app.mykarr@gmail.com?subject=MYKARR%20beta" data-t="fbB">Uzrakstīt mums</a>
+    <a class="btn" href="/feedback" data-t="fbB">Atstāt atsauksmi</a>
   </div>
 </main>
 
 <footer><div class="bar">
-  <nav><a href="/privacy" data-t="lPriv">Privātuma politika</a><a href="/terms" data-t="lTerms">Lietošanas noteikumi</a><a href="/delete-account" data-t="lDel">Konta dzēšana</a></nav>
+  <nav><a href="/feedback" data-t="lFb">Atsauksmes</a><a href="/privacy" data-t="lPriv">Privātuma politika</a><a href="/terms" data-t="lTerms">Lietošanas noteikumi</a><a href="/delete-account" data-t="lDel">Konta dzēšana</a></nav>
   <span>© 2026 Ralfs Karro · Mārupe</span>
 </div></footer>
 
@@ -142,8 +142,8 @@ r3h:"iPhone version",r3p:"MYKARR is coming to iOS too. Your account and data wil
 r4h:"Car sharing",r4p:"One car, the whole family: shared records and reminders.",
 r5h:"Community",r5p:"Questions and answers, tutorials, and a marketplace for parts and cars with full service history.",
 r6h:"MYKARR plus",r6p:"Extra features for those who want more. The basic app always stays free.",
-fbH:"You're one of the first",fbP:"Tell us what you like, what bugs you and what's missing. Every message gets read.",fbB:"Write to us",
-lPriv:"Privacy Policy",lTerms:"Terms of Service",lDel:"Delete account"},
+fbH:"You're one of the first",fbP:"Tell us what you like, what bugs you and what's missing. Every message gets read.",fbB:"Leave feedback",
+lFb:"Feedback",lPriv:"Privacy Policy",lTerms:"Terms of Service",lDel:"Delete account"},
 ru:{beta:"Бета-тестирование",title:"Лучший друг твоей машины",sub:"Сервис, топливо, напоминания, штрафы и тюнинг в одном месте. Сфоткай чек, а MYKARR заполнит остальное.",dl:"Скачать для Android",meta:"Бета-версия 1.0.0 · APK-файл, около 68 МБ · Бесплатно",
 whatH:"Что умеет MYKARR",whatP:"Всё о твоей машине в одном месте. Работает и без интернета, и без аккаунта.",
 f1h:"Сфоткай, а мы заполним",f1p:"Чеки с заправки, счета из сервиса, даже боковина шины. Сфоткай, проверь, сохрани.",
@@ -162,8 +162,8 @@ r3h:"Версия для iPhone",r3p:"MYKARR появится и на iOS. Тв�
 r4h:"Общая машина",r4p:"Одна машина, вся семья: общие записи и напоминания.",
 r5h:"Сообщество",r5p:"Вопросы и ответы, инструкции и рынок деталей и машин с полной историей обслуживания.",
 r6h:"MYKARR plus",r6p:"Дополнительные возможности для тех, кому нужно больше. Базовое приложение всегда останется бесплатным.",
-fbH:"Ты один из первых",fbP:"Расскажи, что нравится, что раздражает и чего не хватает. Каждое сообщение читаем.",fbB:"Написать нам",
-lPriv:"Политика конфиденциальности",lTerms:"Условия использования",lDel:"Удаление аккаунта"}};
+fbH:"Ты один из первых",fbP:"Расскажи, что нравится, что раздражает и чего не хватает. Каждое сообщение читаем.",fbB:"Оставить отзыв",
+lFb:"Отзывы",lPriv:"Политика конфиденциальности",lTerms:"Условия использования",lDel:"Удаление аккаунта"}};
 const LV={};document.querySelectorAll('[data-t]').forEach(e=>LV[e.dataset.t]=e.innerHTML);T.lv=LV;
 function setLang(l){const d=T[l]||LV;document.querySelectorAll('[data-t]').forEach(e=>{if(d[e.dataset.t])e.innerHTML=d[e.dataset.t]});
 document.documentElement.lang=l;document.querySelectorAll('.langs button').forEach(b=>b.classList.toggle('on',b.dataset.set===l));

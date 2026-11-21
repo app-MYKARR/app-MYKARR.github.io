@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Atsauksmes – MYKARR</title>
+<meta name="description" content="Pastāsti, kas tev patīk MYKARR, kas kaitina un kā tev pietrūkst.">
+<link rel="icon" href="icon.png">
+<style>
+:root{--accent:#0DD8BF;--accent-ink:#087a6c;--bg:#ffffff;--fg:#1b1f1e;--muted:#5d6866;--line:#e3e9e8;--card:#f5f8f8;--hero:#eafbf8;--err:#c62828}
+@media (prefers-color-scheme:dark){:root{--bg:#121514;--fg:#e8eeed;--muted:#9aa7a5;--line:#2a3130;--card:#1a1f1e;--accent-ink:#0DD8BF;--hero:#132321;--err:#ff8a80}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--accent-ink)}
+header{border-bottom:1px solid var(--line)}
+.bar{max-width:720px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.logo{font-weight:800;letter-spacing:.12em;color:var(--fg);text-decoration:none;margin-right:auto}
+.logo span{color:var(--accent)}
+.langs button{background:none;border:1px solid var(--line);color:var(--muted);border-radius:8px;padding:4px 10px;font:inherit;font-size:14px;cursor:pointer;margin-left:4px}
+.langs button.on{border-color:var(--accent);color:var(--accent-ink);font-weight:600}
+main{max-width:720px;margin:0 auto;padding:28px 20px 60px}
+h1{font-size:32px;line-height:1.2;margin:4px 0 6px}
+.lead{color:var(--muted);margin:0 0 26px;font-size:17px}
+.step{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;margin-bottom:14px;transition:opacity .25s,transform .25s}
+.step.locked{opacity:.45;pointer-events:none}
+.step h2{font-size:17px;margin:0 0 12px;display:flex;align-items:center;gap:10px}
+.num{flex:none;width:26px;height:26px;border-radius:50%;background:var(--accent);color:#06312b;font-size:14px;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.faces{display:flex;justify-content:space-between;gap:6px}
+.faces button{flex:1;font-size:34px;line-height:1;padding:12px 0;border-radius:14px;border:2px solid transparent;background:var(--bg);cursor:pointer;filter:grayscale(1);opacity:.6;transition:all .15s}
+.faces button:hover{opacity:1;filter:none}
+.faces button.on{filter:none;opacity:1;border-color:var(--accent);transform:scale(1.08)}
+.face-label{text-align:center;color:var(--muted);font-size:14px;min-height:22px;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips button{border:1.5px solid var(--line);background:var(--bg);color:var(--fg);border-radius:99px;padding:8px 14px;font:inherit;font-size:15px;cursor:pointer;transition:all .15s}
+.chips button.on{border-color:var(--accent);background:var(--accent);color:#06312b;font-weight:600}
+.big .chips button{padding:11px 16px}
+label.f{display:block;font-size:14px;color:var(--muted);margin:14px 0 4px}
+textarea,input[type=text],input[type=email]{width:100%;font:inherit;color:var(--fg);background:var(--bg);border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;outline:none;transition:border-color .15s}
+textarea:focus,input:focus{border-color:var(--accent)}
+textarea{min-height:130px;resize:vertical}
+.count{text-align:right;font-size:13px;color:var(--muted);margin-top:4px}
+.hint{font-size:14px;color:var(--muted);margin:-6px 0 12px}
+.box{margin-top:16px;padding-top:16px;border-top:1px dashed var(--line);animation:in .25s ease}
+.box h3{font-size:16px;margin:0 0 8px}
+@keyframes in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.tip{font-size:14px;color:var(--muted);margin-top:8px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:520px){.row2{grid-template-columns:1fr}}
+.check{display:flex;gap:10px;align-items:flex-start;margin-top:14px;font-size:15px;cursor:pointer}
+.check input{margin-top:5px;width:18px;height:18px;accent-color:var(--accent)}
+.hp{position:absolute;left:-9999px;height:0;overflow:hidden}
+.send{width:100%;border:0;background:var(--accent);color:#06312b;font:inherit;font-weight:700;font-size:17px;padding:15px;border-radius:14px;cursor:pointer;margin-top:6px}
+.send:disabled{opacity:.5;cursor:default}
+.err{color:var(--err);font-size:15px;margin-top:10px;min-height:1px}
+.small{font-size:13px;color:var(--muted);margin-top:12px;text-align:center}
+.thanks{display:none;text-align:center;padding:40px 20px;background:var(--hero);border-radius:22px;position:relative;overflow:hidden}
+.thanks .big{font-size:64px;line-height:1;animation:pop .6s cubic-bezier(.2,1.6,.4,1)}
+.thanks h2{font-size:26px;margin:14px 0 6px}
+.thanks p{color:var(--muted);margin:0 0 18px}
+.thanks a.btn{display:inline-block;background:var(--accent);color:#06312b;font-weight:700;text-decoration:none;padding:12px 20px;border-radius:12px}
+@keyframes pop{from{transform:scale(.2);opacity:0}to{transform:scale(1);opacity:1}}
+.confetti{position:absolute;width:9px;height:14px;top:-20px;border-radius:2px;animation:fall 1.8s ease-in forwards}
+@keyframes fall{to{transform:translateY(420px) rotate(540deg);opacity:0}}
+footer{border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+footer .bar{justify-content:space-between}
+footer nav a{color:var(--muted);text-decoration:none;margin-right:14px}
+</style>
+</head>
+<body>
+<header><div class="bar">
+  <a class="logo" href="/">MY<span>KARR</span></a>
+  <div class="langs"><button data-set="lv">LV</button><button data-set="en">EN</button><button data-set="ru">RU</button></div>
+</div></header>
+
+<main>
+  <div id="form">
+    <h1 data-t="h1">Kā tev patīk MYKARR?</h1>
+    <p class="lead" data-t="lead">Tu esi viens no pirmajiem. Pastāsti godīgi: kas patīk, kas kaitina un kā tev pietrūkst. Katra atsauksme tiek izlasīta.</p>
+
+    <section class="step" id="s1">
+      <h2><span class="num">1</span><span data-t="q1">Kopumā, cik apmierināts?</span></h2>
+      <div class="faces" id="faces">
+        <button type="button" data-v="1" aria-label="1">😡</button>
+        <button type="button" data-v="2" aria-label="2">😕</button>
+        <button type="button" data-v="3" aria-label="3">😐</button>
+        <button type="button" data-v="4" aria-label="4">🙂</button>
+        <button type="button" data-v="5" aria-label="5">😍</button>
+      </div>
+      <div class="face-label" id="faceLabel"></div>
+    </section>
+
+    <section class="step big locked" id="s2">
+      <h2><span class="num">2</span><span data-t="q2">Par ko tu raksti?</span></h2>
+      <p class="hint" data-t="q2hint">Vari izvēlēties vairākas.</p>
+      <div class="chips" id="kinds">
+        <button type="button" data-v="bug" data-t="kBug">🐞 Kļūda</button>
+        <button type="button" data-v="idea" data-t="kIdea">💡 Ideja</button>
+        <button type="button" data-v="love" data-t="kLove">❤️ Kas patīk</button>
+        <button type="button" data-v="other" data-t="kOther">💬 Cits</button>
+      </div>
+    </section>
+
+    <section class="step locked" id="s3">
+      <h2><span class="num">3</span><span data-t="q3">Pastāsti vairāk</span></h2>
+      <p class="hint" data-t="q3hint">Kurām lietotnes daļām tas attiecas? (nav obligāti, vari vairākas)</p>
+      <div class="chips" id="areas" style="margin-bottom:6px">
+        <button type="button" data-v="scan" data-t="aScan">📸 Skenēšana</button>
+        <button type="button" data-v="fuel" data-t="aFuel">⛽ Degviela</button>
+        <button type="button" data-v="service" data-t="aService">🔧 Serviss</button>
+        <button type="button" data-v="reminders" data-t="aRem">🔔 Atgādinājumi</button>
+        <button type="button" data-v="account" data-t="aAcc">☁️ Konts</button>
+        <button type="button" data-v="design" data-t="aDesign">🎨 Izskats</button>
+        <button type="button" data-v="other" data-t="aOther">Cits</button>
+      </div>
+      <div id="boxes"></div>
+    </section>
+
+    <section class="step locked" id="s4">
+      <h2><span class="num">4</span><span data-t="q4">Kas tu esi? (nav obligāti)</span></h2>
+      <div class="row2">
+        <div><label class="f" for="name" data-t="lName">Vārds vai segvārds</label><input type="text" id="name" maxlength="80" autocomplete="nickname"></div>
+        <div><label class="f" for="device" data-t="lDevice">Telefona modelis</label><input type="text" id="device" maxlength="120" placeholder="Samsung Galaxy S25"></div>
+      </div>
+      <label class="check"><input type="checkbox" id="wantReply"><span data-t="lReply">Gribu atbildi uz e-pastu</span></label>
+      <div id="emailBox" style="display:none"><label class="f" for="email" data-t="lEmail">Tavs e-pasts</label><input type="email" id="email" maxlength="200" autocomplete="email"></div>
+      <div class="hp" aria-hidden="true"><label>Website<input type="text" id="website" tabindex="-1" autocomplete="off"></label></div>
+      <button class="send" id="send" disabled data-t="send">Nosūtīt atsauksmi</button>
+      <div class="err" id="err"></div>
+      <div class="small" data-t="privacy">Sūtot tu piekrīti, ka saņemam tavu atsauksmi. Vairāk: <a href="/privacy">privātuma politika</a>.</div>
+    </section>
+  </div>
+
+  <div class="thanks" id="thanks">
+    <div class="big" id="thanksFace">🙌</div>
+    <h2 data-t="tH">Paldies, saņēmām!</h2>
+    <p id="thanksP" data-t="tP">Tava atsauksme palīdz MYKARR kļūt labākam. Ja lūdzi atbildi, uzrakstīšu tev drīz.</p>
+    <a class="btn" href="/" data-t="tBack">Atpakaļ uz sākumu</a>
+  </div>
+</main>
+
+<footer><div class="bar">
+  <nav><a href="/privacy" data-t="lPriv">Privātuma politika</a><a href="/terms" data-t="lTerms">Lietošanas noteikumi</a></nav>
+  <span>© 2026 Ralfs Karro · Mārupe</span>
+</div></footer>
+
+<script>
+// Feedback goes straight into the MYKARR Supabase table "feedback".
+// The key below is the public (publishable) one: it can only ADD feedback.
+const SB_URL = 'https://agnolfwvnnorbohlezsb.supabase.co';
+const SB_KEY = 'sb_publishable_1kN7uvTMbgABmdAJWdvmJQ_8q-etzTK';
+
+const T = {
+en:{h1:"How do you like MYKARR?",lead:"You're one of the first. Be honest: what you like, what bugs you and what's missing. Every message gets read.",
+q1:"Overall, how happy are you?",q2:"What's it about?",q2hint:"You can pick more than one.",q3hint:"Which parts of the app? (optional, pick any)",kBug:"🐞 A bug",kIdea:"💡 An idea",kLove:"❤️ Something I like",kOther:"💬 Other",
+q3:"Tell us more",aScan:"📸 Scanning",aFuel:"⛽ Fuel",aService:"🔧 Service",aRem:"🔔 Reminders",aAcc:"☁️ Account",aDesign:"🎨 Looks",aOther:"Other",
+q4:"Who are you? (optional)",lName:"Name or nickname",lDevice:"Phone model",lReply:"I'd like a reply by email",lEmail:"Your email",send:"Send feedback",
+privacy:"By sending, you agree that we receive your feedback. More: <a href=\"/privacy\">privacy policy</a>.",
+tH:"Thanks, got it!",tP:"Your feedback helps make MYKARR better. If you asked for a reply, I'll write back soon.",tBack:"Back to home",
+lPriv:"Privacy Policy",lTerms:"Terms of Service",
+faces:["Really not happy","Could be better","It's okay","I like it","Love it!"],
+prompts:{bug:["What went wrong?","What happened, and what did you do just before? The more detail, the faster I can fix it.","Tip: if you can, mention the screen and the steps, e.g. \"Fuel → scanned a receipt → litres were wrong\"."],
+idea:["What would make MYKARR better?","What would you like MYKARR to do? How would it help you?","Tip: ideas from real drivers decide what gets built next."],
+love:["What do you like?","What works well for you? It helps to know what to keep.",""],
+other:["Tell us more","Anything on your mind about MYKARR.",""]},
+eMsg:"Write at least a few words in one of the boxes.",eEmail:"That email doesn't look right.",eSend:"Couldn't send. Check your internet and try again.",eBusy:"Too much feedback right now. Please try again in a bit."},
+ru:{h1:"Как тебе MYKARR?",lead:"Ты один из первых. Расскажи честно: что нравится, что раздражает и чего не хватает. Каждое сообщение читаем.",
+q1:"В целом, насколько ты доволен?",q2:"О чём ты пишешь?",q2hint:"Можно выбрать несколько.",q3hint:"Каких частей приложения это касается? (необязательно, можно несколько)",kBug:"🐞 Ошибка",kIdea:"💡 Идея",kLove:"❤️ Что нравится",kOther:"💬 Другое",
+q3:"Расскажи подробнее",aScan:"📸 Сканирование",aFuel:"⛽ Топливо",aService:"🔧 Сервис",aRem:"🔔 Напоминания",aAcc:"☁️ Аккаунт",aDesign:"🎨 Внешний вид",aOther:"Другое",
+q4:"Кто ты? (необязательно)",lName:"Имя или ник",lDevice:"Модель телефона",lReply:"Хочу ответ на e-mail",lEmail:"Твой e-mail",send:"Отправить отзыв",
+privacy:"Отправляя, ты соглашаешься, что мы получим твой отзыв. Подробнее: <a href=\"/privacy\">политика конфиденциальности</a>.",
+tH:"Спасибо, получили!",tP:"Твой отзыв помогает сделать MYKARR лучше. Если ты просил ответ, я скоро напишу.",tBack:"На главную",
+lPriv:"Политика конфиденциальности",lTerms:"Условия использования",
+faces:["Совсем не доволен","Могло быть лучше","Нормально","Нравится","Обожаю!"],
+prompts:{bug:["Что пошло не так?","Что случилось и что ты делал перед этим? Чем подробнее, тем быстрее исправлю.","Совет: укажи экран и шаги, например «Топливо → сканировал чек → литры неверные»."],
+idea:["Что сделало бы MYKARR лучше?","Что бы ты хотел, чтобы MYKARR умел? Как это тебе поможет?","Совет: идеи настоящих водителей решают, что будет сделано дальше."],
+love:["Что тебе нравится?","Что у тебя хорошо работает? Это помогает понять, что сохранить.",""],
+other:["Расскажи подробнее","Всё, что ты думаешь о MYKARR.",""]},
+eMsg:"Напиши хотя бы пару слов в одном из полей.",eEmail:"Этот e-mail выглядит неправильно.",eSend:"Не удалось отправить. Проверь интернет и попробуй ещё раз.",eBusy:"Сейчас слишком много отзывов. Попробуй чуть позже."}};
+const LV={faces:["Ļoti neapmierināts","Varētu būt labāk","Normāli","Patīk","Ļoti patīk!"],
+prompts:{bug:["Kas nogāja greizi?","Kas notika, un ko tu darīji tieši pirms tam? Jo vairāk sīkumu, jo ātrāk varu salabot.","Padoms: ja vari, pieraksti ekrānu un soļus, piemēram, \"Degviela → noskenēju čeku → litri nepareizi\"."],
+idea:["Kas padarītu MYKARR labāku?","Ko tu gribētu, lai MYKARR prot? Kā tas tev palīdzētu?","Padoms: īstu braucēju idejas nosaka, ko taisām nākamo."],
+love:["Kas tev patīk?","Kas tev strādā labi? Tas palīdz saprast, ko saglabāt.",""],
+other:["Pastāsti vairāk","Viss, kas tev ir prātā par MYKARR.",""]},
+eMsg:"Uzraksti vismaz pāris vārdus kādā no laukiem.",eEmail:"Šis e-pasts neizskatās pareizs.",eSend:"Neizdevās nosūtīt. Pārbaudi internetu un mēģini vēlreiz.",eBusy:"Šobrīd ir ļoti daudz atsauksmju. Pamēģini vēlāk."};
+document.querySelectorAll('[data-t]').forEach(e=>LV[e.dataset.t]=e.innerHTML);T.lv=LV;
+
+let lang='lv', rating=null;
+const kinds=new Set(), areas=new Set(), texts={};
+const ORDER=['love','bug','idea','other'];
+const ICON={love:'❤️',bug:'🐞',idea:'💡',other:'💬'};
+const $=id=>document.getElementById(id);
+const D=()=>T[lang];
+
+function setLang(l){lang=T[l]?l:'lv';const d=D();
+  document.querySelectorAll('[data-t]').forEach(e=>{if(d[e.dataset.t]!==undefined)e.innerHTML=d[e.dataset.t]});
+  document.documentElement.lang=lang;
+  document.querySelectorAll('.langs button').forEach(b=>b.classList.toggle('on',b.dataset.set===lang));
+  try{localStorage.setItem('lang',lang)}catch(e){}
+  drawBoxes();refresh();}
+document.querySelectorAll('.langs button').forEach(b=>b.onclick=()=>setLang(b.dataset.set));
+
+function mark(groupId,set){document.querySelectorAll('#'+groupId+' button').forEach(b=>b.classList.toggle('on',set.has(b.dataset.v)));}
+
+document.querySelectorAll('#faces button').forEach(b=>b.onclick=()=>{rating=+b.dataset.v;
+  document.querySelectorAll('#faces button').forEach(x=>x.classList.toggle('on',x===b));
+  // First pick only: a low score usually means a bug, a 5 means love.
+  if(kinds.size===0){if(rating<=2)kinds.add('bug');if(rating===5)kinds.add('love');mark('kinds',kinds);drawBoxes();}
+  refresh();});
+document.querySelectorAll('#kinds button').forEach(b=>b.onclick=()=>{const v=b.dataset.v;
+  kinds.has(v)?kinds.delete(v):kinds.add(v);mark('kinds',kinds);drawBoxes();refresh();
+  if(kinds.has(v)){const t=document.querySelector('#box-'+v+' textarea');if(t)t.focus();}});
+document.querySelectorAll('#areas button').forEach(b=>b.onclick=()=>{const v=b.dataset.v;
+  areas.has(v)?areas.delete(v):areas.add(v);mark('areas',areas);});
+$('wantReply').onchange=()=>{$('emailBox').style.display=$('wantReply').checked?'block':'none';if($('wantReply').checked)$('email').focus();};
+
+// One box per chosen topic, always in the same order. Text typed into a
+// box is kept even if the topic is switched off and on again.
+function drawBoxes(){const d=D(),wrap=$('boxes');wrap.innerHTML='';
+  ORDER.filter(k=>kinds.has(k)).forEach(k=>{const p=d.prompts[k];
+    const box=document.createElement('div');box.className='box';box.id='box-'+k;
+    box.innerHTML='<h3>'+ICON[k]+' '+p[0]+'</h3><textarea maxlength="4000"></textarea>'+
+      '<div class="count"><span>0</span> / 4000</div>'+(p[2]?'<div class="tip">'+p[2]+'</div>':'');
+    const ta=box.querySelector('textarea'),cnt=box.querySelector('.count span');
+    ta.placeholder=p[1];ta.value=texts[k]||'';cnt.textContent=ta.value.length;
+    ta.oninput=()=>{texts[k]=ta.value;cnt.textContent=ta.value.length;refresh();};
+    wrap.appendChild(box);});}
+
+function filled(){return ORDER.filter(k=>kinds.has(k)&&(texts[k]||'').trim().length>=3);}
+
+function refresh(){const d=D();
+  $('faceLabel').textContent=rating?d.faces[rating-1]:'';
+  $('s2').classList.toggle('locked',!rating);
+  $('s3').classList.toggle('locked',kinds.size===0);
+  const ok=filled().length>0;
+  $('s4').classList.toggle('locked',!ok);
+  $('send').disabled=!ok;}
+
+$('send').onclick=async()=>{const d=D();$('err').textContent='';
+  if($('website').value){showThanks();return;} // a robot filled the hidden field
+  const done=filled();
+  if(!done.length){$('err').textContent=d.eMsg;return;}
+  let email=null;
+  if($('wantReply').checked){email=$('email').value.trim();
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){$('err').textContent=d.eEmail;$('email').focus();return;}}
+  $('send').disabled=true;
+  const val=k=>done.includes(k)?texts[k].trim():null;
+  const body={rating,kinds:done,areas:[...areas],
+    liked:val('love'),bugs:val('bug'),ideas:val('idea'),other:val('other'),
+    name:$('name').value.trim()||null,email,device:$('device').value.trim()||null,lang};
+  try{
+    const r=await fetch(SB_URL+'/rest/v1/feedback',{method:'POST',
+      headers:{apikey:SB_KEY,'Content-Type':'application/json',Prefer:'return=minimal'},
+      body:JSON.stringify(body)});
+    if(!r.ok){const t=await r.text();throw new Error(t.includes('Too much')?'busy':'send');}
+    showThanks();
+  }catch(e){$('err').textContent=e.message==='busy'?d.eBusy:d.eSend;$('send').disabled=false;}
+};
+
+function showThanks(){$('form').style.display='none';const t=$('thanks');t.style.display='block';
+  $('thanksFace').textContent=kinds.size>1?'🙌':kinds.has('bug')?'🛠️':kinds.has('idea')?'💡':kinds.has('love')?'🥰':'🙌';
+  const colors=['#0DD8BF','#ffd54f','#ff8a65','#81d4fa','#ce93d8'];
+  for(let i=0;i<40;i++){const c=document.createElement('div');c.className='confetti';
+    c.style.left=Math.random()*100+'%';c.style.background=colors[i%colors.length];
+    c.style.animationDelay=(Math.random()*.5)+'s';t.appendChild(c);}
+  window.scrollTo({top:0,behavior:'smooth'});}
+
+let start='lv';try{start=localStorage.getItem('lang')||'lv'}catch(e){}
+setLang(start);
+</script>
+</body>
+</html>
