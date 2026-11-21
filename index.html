@@ -169,7 +169,8 @@ function setLang(l){const d=T[l]||LV;document.querySelectorAll('[data-t]').forEa
 document.documentElement.lang=l;document.querySelectorAll('.langs button').forEach(b=>b.classList.toggle('on',b.dataset.set===l));
 try{localStorage.setItem('lang',l)}catch(e){}}
 document.querySelectorAll('.langs button').forEach(b=>b.onclick=()=>setLang(b.dataset.set));
-let start='lv';try{const n=(navigator.language||'').toLowerCase();start=localStorage.getItem('lang')||(n.startsWith('ru')?'ru':n.startsWith('en')?'en':'lv')}catch(e){}
+// Latvian by default; a language the visitor picked is remembered.
+let start='lv';try{start=localStorage.getItem('lang')||'lv'}catch(e){}
 setLang(start);
 </script>
 </body>
