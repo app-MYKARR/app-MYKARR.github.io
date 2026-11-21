@@ -1,25 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="lv">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Terms of Service – MYKARR</title>
-<meta name="description" content="The terms for using the MYKARR app.">
+<title>Lietošanas noteikumi – MYKARR</title>
+<link rel="icon" href="icon.png">
 <style>
 :root{--accent:#0DD8BF;--accent-ink:#087a6c;--bg:#ffffff;--fg:#1b1f1e;--muted:#5d6866;--line:#e3e9e8;--card:#f5f8f8}
 @media (prefers-color-scheme:dark){:root{--bg:#121514;--fg:#e8eeed;--muted:#9aa7a5;--line:#2a3130;--card:#1a1f1e;--accent-ink:#0DD8BF}}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 header{border-bottom:1px solid var(--line)}
-.bar{max-width:760px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
-.logo{font-weight:800;letter-spacing:.12em;color:var(--fg);text-decoration:none}
+.bar{max-width:760px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+header .bar{flex-wrap:nowrap;gap:10px}
+.logo{font-weight:800;letter-spacing:.12em;color:var(--fg);text-decoration:none;margin-right:auto}
 .logo span{color:var(--accent)}
-nav{display:flex;gap:16px;flex-wrap:wrap}
-nav a{color:var(--muted);text-decoration:none;font-size:15px}
-nav a.on,nav a:hover{color:var(--accent-ink)}
-main{max-width:760px;margin:0 auto;padding:28px 20px 60px}
+.langs button{background:none;border:1px solid var(--line);color:var(--muted);border-radius:8px;padding:4px 10px;font:inherit;font-size:14px;cursor:pointer;margin-left:4px}
+.langs button.on{border-color:var(--accent);color:var(--accent-ink);font-weight:600}
+.fblink,.langs{white-space:nowrap;flex:none}.langs{display:flex}
+.fblink{font-size:14px;font-weight:600;text-decoration:none;color:#06312b;background:var(--accent);padding:5px 12px;border-radius:8px}
+@media (max-width:480px){header .bar{padding:12px 14px;gap:8px}.langs button{padding:3px 7px;margin-left:3px;font-size:13px}.fblink{padding:5px 10px;font-size:13px}}
+.tabs{max-width:760px;margin:0 auto;padding:12px 20px 0;display:flex;gap:16px;flex-wrap:wrap}
+.tabs a{color:var(--muted);text-decoration:none;font-size:15px}
+.tabs a.on{color:var(--accent-ink);font-weight:600}
+main{max-width:760px;margin:0 auto;padding:20px 20px 60px}
 h1{font-size:30px;line-height:1.2;margin:8px 0 4px}
-h2{font-size:21px;margin:36px 0 8px;padding-top:4px}
+h2{font-size:21px;margin:36px 0 8px}
 .updated{color:var(--muted);font-size:14px;margin:0 0 20px}
 .lead{font-size:17px;background:var(--card);border-left:4px solid var(--accent);padding:14px 16px;border-radius:8px}
 a{color:var(--accent-ink)}
@@ -31,16 +37,78 @@ ul,ol{padding-left:22px}li{margin:4px 0}
 .steps li{margin:8px 0}
 footer{border-top:1px solid var(--line);color:var(--muted);font-size:14px}
 footer .bar{justify-content:space-between}
-.cards{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin-top:24px}
-.cards a{display:block;padding:16px;border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--fg);background:var(--card)}
-.cards a b{display:block;color:var(--accent-ink);margin-bottom:4px}
+.lang-block{display:none}.lang-block.show{display:block}
 </style>
 </head>
 <body>
-<header><div class="bar"><a class="logo" href="/">MY<span>KARR</span></a><nav><a href="/privacy">Privacy Policy</a><a href="/terms" class=on>Terms of Service</a><a href="/delete-account">Delete your account</a></nav></div></header>
+<header><div class="bar">
+  <a class="logo" href="/">MY<span>KARR</span></a>
+  <a class="fblink" href="/feedback" data-ui="fb">Atsauksmes</a>
+  <div class="langs"><button data-set="lv">LV</button><button data-set="en">EN</button><button data-set="ru">RU</button></div>
+</div></header>
+<nav class="tabs"><a href="/privacy" data-ui="privacy">Privātuma politika</a><a href="/terms" data-ui="terms" class=on>Lietošanas noteikumi</a><a href="/delete-account" data-ui="delete-account">Konta dzēšana</a></nav>
 <main>
+<div class="lang-block show" data-lang="lv" lang="lv">
+<h1>MYKARR – Lietošanas noteikumi</h1>
+<p class="updated">Pēdējās izmaiņas: 2026. gada 21. novembris</p>
+<p class="lead"><b>Īsumā:</b> MYKARR palīdz sekot līdzi tavam auto. Tavi dati paliek tavi. Lieto lietotni godīgi, un visu svarīgo par auto drošību pārbaudi pie īsta meistara.</p>
+
+<h2>Par šiem noteikumiem</h2>
+<p>MYKARR veido <b>Ralfs Karro</b>, Drustu iela 18A, Mārupe, Latvija ("mēs"). Instalējot vai lietojot MYKARR, tu piekrīti šiem noteikumiem. Mūsu <a href="/privacy">privātuma politika</a> izskaidro, kā rīkojamies ar taviem datiem.</p>
+<p>MYKARR pamata lietotne ir bez maksas. Dažām funkcijām, piemēram, skenēšanai, vajag bezmaksas kontu.</p>
+
+<h2>Tavs konts</h2>
+<ul>
+<li>Lai izveidotu kontu, tev jābūt <b>vismaz 18 gadus vecam</b>. Latvijā tas ir arī vecums, kad var iegūt vadītāja apliecību. Reģistrējoties mēs jautājam tavu dzimšanas datumu, lai to pārbaudītu.</li>
+<li>Norādi īstu e-pasta adresi, kurai tev ir piekļuve. To izmantojam tikai pieteikšanās vajadzībām un svarīgām ziņām.</li>
+<li>Paturi paroli pie sevis. Tu esi atbildīgs par to, kas notiek tavā kontā, tāpēc nekavējoties pasaki mums, ja domā, ka tajā ielauzies kāds cits.</li>
+<li>Viens konts vienam cilvēkam. Lūdzu, nedalies ar savu pieteikšanos.</li>
+<li>Auto kopīgošana ar ģimeni vai draugiem nāks vēlāk. Kad tā būs pieejama, šeit pievienosim, kā tā darbojas.</li>
+</ul>
+
+<h2>Godīga MYKARR lietošana</h2>
+<p>Lūdzu:</p>
+<ul>
+<li>Neaugšupielādē neko nelegālu, kā arī bildes un dokumentus, kurus tev nav tiesību izmantot</li>
+<li>Neaugšupielādē citu cilvēku personas datus, kam nav sakara ar tavu auto</li>
+<li>Nemēģini apiet skenēšanas limitu, piemēram, ar vairākiem kontiem vai skriptiem</li>
+<li>Nemēģini ielauzties, pārslogot vai kopēt lietotni, mūsu serverus vai citu cilvēku datus</li>
+<li>Neizmanto MYKARR, lai viltotu servisa ierakstus vai maldinātu auto pircēju</li>
+</ul>
+<p>Ja konts pārkāpj šos noteikumus, mēs varam to ierobežot vai slēgt. Kur iespējams, vispirms tev par to pastāstīsim un ļausim paskaidrot.</p>
+
+<h2>Skenēšana</h2>
+<ul>
+<li>Pieteikušies lietotāji katru mēnesi saņem noteiktu skaitu bezmaksas skenēšanu (pašlaik 30). Lietotne vienmēr rāda, cik tev vēl atlicis. Mēs varam šo skaitu mainīt; ja tas samazināsies, vispirms par to pastāstīsim lietotnē.</li>
+<li>Skenējumus nolasa mākslīgais intelekts, un tas <b>var kļūdīties</b>: samainīti skaitļi, nepareizi nolasīts datums, nepareizs detaļas izmērs. Vienmēr pārbaudi aizpildīto formu, pirms to saglabā.</li>
+<li>Skenē tikai to, kas pieder tev vai ar ko tev ir tiesības dalīties, piemēram, savus čekus, rēķinus un auto detaļas.</li>
+</ul>
+
+<h2>Kam kas pieder</h2>
+<p><b>Tavs saturs pieder tev.</b> Viss, ko ievadi MYKARR (ieraksti, bildes, čeki, piezīmes), paliek tavs. Tu mums dod atļauju to tikai glabāt, sinhronizēt, dublēt un apstrādāt, lai lietotne tev darbotos, tostarp nosūtīt skenējumu mūsu mākslīgā intelekta pakalpojumu sniedzējam. Šī atļauja beidzas, kad izdzēs saturu vai savu kontu.</p>
+<p><b>Lietotne pieder mums.</b> MYKARR nosaukums, logo, dizains un kods pieder mums. Tu vari lietotni lietot, bet ne kopēt, pārdot tālāk vai uztaisīt tās kopiju.</p>
+
+<h2>MYKARR ir palīgs, nevis meistars</h2>
+<p>Atgādinājumi, ierastie intervāli, patēriņa skaitļi un "Mana auto dati" balstās uz to, ko tu ievadi, un uz vispārīgiem ieteikumiem. Tie var būt nepareizi vai nokavēti, piemēram, ja tavs nobraukums nav atjaunināts vai paziņojums nepienāk. <b>Tava auto rokasgrāmata, tavs meistars un likums ir pirmajā vietā</b>, īpaši runājot par bremzēm, riepām un visu, kas saistīts ar drošību.</p>
+<p>Mēs cītīgi strādājam, lai MYKARR darbotos un tavi dati būtu drošībā, bet lietotne tiek piedāvāta "tāda, kāda tā ir". Reizēm tā var nebūt pieejama vai tajā var būt kļūdas. Saglabā rezerves kopiju tam, kas tev ir svarīgs (Iestatījumi → Dublēšana un atjaunošana).</p>
+
+<h2>Atbildība</h2>
+<p>Ciktāl to atļauj likums, mēs neatbildam par netiešiem zaudējumiem, piemēram, nokavētu servisu, sodu, salūzušu auto vai pazaudētiem datiem, un mūsu kopējā atbildība ir ierobežota līdz 50 €. Nekas šajos noteikumos neierobežo atbildību par tīšu kaitējumu vai rupju neuzmanību, kā arī tavas patērētāja tiesības saskaņā ar ES un Latvijas likumiem.</p>
+
+<h2>Lietošanas beigšana</h2>
+<p>Tu vari pārtraukt MYKARR lietošanu jebkurā brīdī. Lai izdzēstu savus tiešsaistes datus, izdzēs kontu cilnē Profils (kartīte Konts → Dzēst kontu). Ja mēs kādreiz slēgsim MYKARR, pastāstīsim par to vismaz 60 dienas iepriekš, lai tu varētu eksportēt savus datus.</p>
+
+<h2>Izmaiņas šajos noteikumos</h2>
+<p>Kad šie noteikumi mainīsies, atjaunināsim datumu augšā. Par svarīgām izmaiņām pastāstīsim lietotnē vismaz 30 dienas, pirms tās stājas spēkā. Ja pēc tam turpināsi lietot MYKARR, būs spēkā jaunie noteikumi.</p>
+<p><b>MYKARR turpina augt.</b> Plānojam pievienot pamācības, tirgu, jautājumus un atbildes un abonēšanas līmeņus, tāpēc šie noteikumi laika gaitā mainīsies. Jaunām funkcijām var būt savi noteikumi, piemēram, pirkšanai un pārdošanai, ierakstiem kopienā vai maksai par abonementu. Šos noteikumus pievienosim šeit pirms katras funkcijas palaišanas, un, lietojot jaunu funkciju, tu piekrīti tās noteikumiem. Abonēšanas līmeņi būs pēc izvēles: pamata lietotne paliks bez maksas.</p>
+
+<h2>Likums un strīdi</h2>
+<p>Šos noteikumus regulē Latvijas likumi. Ja kas noiet greizi, vispirms uzraksti mums uz <b><a href="mailto:app.mykarr@gmail.com">app.mykarr@gmail.com</a></b>, un mēs centīsimies to atrisināt. Ja tas neizdosies, strīdus izskata Latvijas tiesas, bet kā patērētājs tu vari vērsties arī tās ES valsts tiesās un patērētāju iestādēs, kurā dzīvo, tostarp Patērētāju tiesību aizsardzības centrā (<a href="https://www.ptac.gov.lv">PTAC</a>).</p>
+
+</div>
+<div class="lang-block" data-lang="en" lang="en">
 <h1>MYKARR – Terms of Service</h1>
-<p class="updated">Last updated: 20 November 2026</p>
+<p class="updated">Last updated: 21 November 2026</p>
 <p class="lead"><b>The short version:</b> MYKARR helps you keep track of your car. Your data stays yours. Use the app fairly, and double-check anything important about your car's safety with a real mechanic.</p>
 
 <h2>About these terms</h2>
@@ -86,7 +154,7 @@ footer .bar{justify-content:space-between}
 <p>As far as the law allows, we're not liable for indirect losses, such as a missed service, a fine, a breakdown or lost data, and our total liability is limited to €50. Nothing in these terms limits liability for intentional harm or gross negligence, or your rights as a consumer under EU and Latvian law.</p>
 
 <h2>Ending</h2>
-<p>You can stop using MYKARR at any time. To remove your online data, delete your account in Settings → Account. If we ever shut MYKARR down, we'll tell you at least 60 days ahead so you can export your data.</p>
+<p>You can stop using MYKARR at any time. To remove your online data, delete your account on the Profile tab (Account card → Delete account). If we ever shut MYKARR down, we'll tell you at least 60 days ahead so you can export your data.</p>
 
 <h2>Changes to these terms</h2>
 <p>We'll update the date at the top when these terms change. For important changes, we'll tell you in the app at least 30 days before they take effect. If you keep using MYKARR after that, the new terms apply.</p>
@@ -95,7 +163,79 @@ footer .bar{justify-content:space-between}
 <h2>Law and disputes</h2>
 <p>These terms are governed by the laws of Latvia. If something goes wrong, email us first at <b><a href="mailto:app.mykarr@gmail.com">app.mykarr@gmail.com</a></b> and we'll try to sort it out. If we can't, disputes go to the courts of Latvia, but as a consumer you can also use the courts and consumer bodies of the EU country where you live, including the Latvian Consumer Rights Protection Centre (<a href="https://www.ptac.gov.lv">PTAC</a>).</p>
 
+</div>
+<div class="lang-block" data-lang="ru" lang="ru">
+<h1>MYKARR – Условия использования</h1>
+<p class="updated">Последнее обновление: 21 ноября 2026 г.</p>
+<p class="lead"><b>Коротко:</b> MYKARR помогает следить за твоей машиной. Твои данные остаются твоими. Пользуйся приложением честно, а всё важное о безопасности машины проверяй у настоящего мастера.</p>
+
+<h2>Об этих условиях</h2>
+<p>MYKARR создаёт <b>Ralfs Karro</b>, Drustu iela 18A, Mārupe, Латвия («мы»). Устанавливая или используя MYKARR, ты соглашаешься с этими условиями. Наша <a href="/privacy">политика конфиденциальности</a> объясняет, как мы обращаемся с твоими данными.</p>
+<p>Базовое приложение MYKARR бесплатно. Для некоторых функций, например сканирования, нужен бесплатный аккаунт.</p>
+
+<h2>Твой аккаунт</h2>
+<ul>
+<li>Чтобы создать аккаунт, тебе должно быть <b>не меньше 18 лет</b>. В Латвии с этого возраста можно получить водительские права. При регистрации мы спрашиваем дату рождения, чтобы это проверить.</li>
+<li>Укажи настоящий адрес эл. почты, к которому у тебя есть доступ. Мы используем его только для входа и важных сообщений.</li>
+<li>Никому не сообщай свой пароль. Ты отвечаешь за то, что происходит в твоём аккаунте, поэтому сразу сообщи нам, если думаешь, что в него вошёл кто-то другой.</li>
+<li>Один аккаунт — один человек. Пожалуйста, не делись своими данными для входа.</li>
+<li>Общий доступ к машине для семьи или друзей появится позже. Когда он появится, мы добавим сюда, как он работает.</li>
+</ul>
+
+<h2>Честное использование MYKARR</h2>
+<p>Пожалуйста, не надо:</p>
+<ul>
+<li>Загружать что-либо незаконное, а также фото и документы, которые ты не имеешь права использовать</li>
+<li>Загружать персональные данные других людей, не связанные с твоей машиной</li>
+<li>Пытаться обойти лимит сканирований, например с помощью нескольких аккаунтов или скриптов</li>
+<li>Пытаться взломать, перегрузить или скопировать приложение, наши серверы или чужие данные</li>
+<li>Использовать MYKARR, чтобы подделывать записи о сервисе или обманывать покупателя машины</li>
+</ul>
+<p>Если аккаунт нарушает эти правила, мы можем ограничить или закрыть его. Когда это возможно, мы сначала сообщим тебе и дадим возможность объясниться.</p>
+
+<h2>Сканирование</h2>
+<ul>
+<li>Пользователи с аккаунтом получают определённое количество бесплатных сканирований в месяц (сейчас 30). Приложение всегда показывает, сколько у тебя осталось. Мы можем изменить это число; если оно уменьшится, мы сначала сообщим об этом в приложении.</li>
+<li>Сканы читает ИИ, и он <b>может ошибаться</b>: перепутанные цифры, неверно прочитанная дата, неправильный размер детали. Всегда проверяй заполненную форму перед сохранением.</li>
+<li>Сканируй только то, что принадлежит тебе или чем ты вправе делиться, например свои чеки, счета и детали машины.</li>
+</ul>
+
+<h2>Кому что принадлежит</h2>
+<p><b>Твой контент принадлежит тебе.</b> Всё, что ты вносишь в MYKARR (записи, фото, чеки, заметки), остаётся твоим. Ты разрешаешь нам только хранить, синхронизировать, резервировать и обрабатывать это, чтобы приложение у тебя работало, включая отправку скана нашему поставщику ИИ. Это разрешение заканчивается, когда ты удаляешь контент или свой аккаунт.</p>
+<p><b>Приложение принадлежит нам.</b> Название, логотип, дизайн и код MYKARR принадлежат нам. Ты можешь пользоваться приложением, но не копировать, не перепродавать и не воссоздавать его.</p>
+
+<h2>MYKARR — помощник, а не мастер</h2>
+<p>Напоминания, обычные интервалы, данные о расходе и «Данные моей машины» основаны на том, что ты вводишь, и на общих рекомендациях. Они могут быть неточными или запаздывать, например если твой пробег не обновлён или уведомление не пришло. <b>Руководство к твоей машине, твой мастер и закон — на первом месте</b>, особенно когда речь идёт о тормозах, шинах и всём, что связано с безопасностью.</p>
+<p>Мы стараемся, чтобы MYKARR работал, а твои данные были в безопасности, но приложение предоставляется «как есть». Иногда оно может быть недоступно или содержать ошибки. Делай резервную копию того, что для тебя важно (Настройки → Резервная копия).</p>
+
+<h2>Ответственность</h2>
+<p>В пределах, допускаемых законом, мы не несём ответственности за косвенные убытки, например пропущенный сервис, штраф, поломку или потерю данных, а наша общая ответственность ограничена 50 €. Ничто в этих условиях не ограничивает ответственность за умышленный вред или грубую небрежность, а также твои права потребителя по законам ЕС и Латвии.</p>
+
+<h2>Прекращение использования</h2>
+<p>Ты можешь перестать пользоваться MYKARR в любой момент. Чтобы удалить свои онлайн-данные, удали аккаунт на вкладке «Профиль» (карточка «Аккаунт» → «Удалить аккаунт»). Если мы когда-нибудь закроем MYKARR, мы сообщим об этом минимум за 60 дней, чтобы ты успел экспортировать свои данные.</p>
+
+<h2>Изменения этих условий</h2>
+<p>Когда эти условия изменятся, мы обновим дату вверху. О важных изменениях мы сообщим в приложении минимум за 30 дней до их вступления в силу. Если ты продолжишь пользоваться MYKARR после этого, будут действовать новые условия.</p>
+<p><b>MYKARR продолжает расти.</b> Мы планируем добавить инструкции, рынок, вопросы и ответы и уровни подписки, поэтому эти условия со временем будут меняться. У новых функций могут быть свои правила, например для покупки и продажи, публикаций в сообществе или оплаты подписки. Мы добавим эти правила сюда до запуска каждой функции, и, пользуясь новой функцией, ты соглашаешься с её правилами. Уровни подписки будут по желанию: базовое приложение останется бесплатным.</p>
+
+<h2>Право и споры</h2>
+<p>Эти условия регулируются законами Латвии. Если что-то пошло не так, сначала напиши нам на <b><a href="mailto:app.mykarr@gmail.com">app.mykarr@gmail.com</a></b>, и мы постараемся всё решить. Если не получится, споры рассматривают суды Латвии, но как потребитель ты также можешь обратиться в суды и органы защиты потребителей страны ЕС, в которой живёшь, в том числе в Центр защиты прав потребителей Латвии (<a href="https://www.ptac.gov.lv">PTAC</a>).</p>
+
+</div>
 </main>
 <footer><div class="bar"><span>© 2026 Ralfs Karro · Mārupe, Latvia</span><a href="mailto:app.mykarr@gmail.com">app.mykarr@gmail.com</a></div></footer>
+<script>
+const UI={"lv": {"fb": "Atsauksmes", "privacy": "Privātuma politika", "terms": "Lietošanas noteikumi", "delete-account": "Konta dzēšana", "home": "Sākums"}, "en": {"fb": "Feedback", "privacy": "Privacy Policy", "terms": "Terms of Service", "delete-account": "Delete account", "home": "Home"}, "ru": {"fb": "Отзывы", "privacy": "Политика конфиденциальности", "terms": "Условия использования", "delete-account": "Удаление аккаунта", "home": "Главная"}};
+const TITLES={"lv": "Lietošanas noteikumi", "en": "Terms of Service", "ru": "Условия использования"};
+function setLang(l){if(!UI[l])l='lv';
+  document.querySelectorAll('.lang-block').forEach(b=>b.classList.toggle('show',b.dataset.lang===l));
+  document.querySelectorAll('[data-ui]').forEach(e=>e.textContent=UI[l][e.dataset.ui]);
+  document.querySelectorAll('.langs button').forEach(b=>b.classList.toggle('on',b.dataset.set===l));
+  document.documentElement.lang=l;document.title=TITLES[l]+' – MYKARR';
+  try{localStorage.setItem('lang',l)}catch(e){}}
+document.querySelectorAll('.langs button').forEach(b=>b.onclick=()=>setLang(b.dataset.set));
+let start='lv';try{start=localStorage.getItem('lang')||'lv'}catch(e){}
+setLang(start);
+</script>
 </body>
 </html>

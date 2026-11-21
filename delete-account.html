@@ -1,25 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="lv">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Delete your account – MYKARR</title>
-<meta name="description" content="How to delete your MYKARR account and data.">
+<title>Konta dzēšana – MYKARR</title>
+<link rel="icon" href="icon.png">
 <style>
 :root{--accent:#0DD8BF;--accent-ink:#087a6c;--bg:#ffffff;--fg:#1b1f1e;--muted:#5d6866;--line:#e3e9e8;--card:#f5f8f8}
 @media (prefers-color-scheme:dark){:root{--bg:#121514;--fg:#e8eeed;--muted:#9aa7a5;--line:#2a3130;--card:#1a1f1e;--accent-ink:#0DD8BF}}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 header{border-bottom:1px solid var(--line)}
-.bar{max-width:760px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
-.logo{font-weight:800;letter-spacing:.12em;color:var(--fg);text-decoration:none}
+.bar{max-width:760px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+header .bar{flex-wrap:nowrap;gap:10px}
+.logo{font-weight:800;letter-spacing:.12em;color:var(--fg);text-decoration:none;margin-right:auto}
 .logo span{color:var(--accent)}
-nav{display:flex;gap:16px;flex-wrap:wrap}
-nav a{color:var(--muted);text-decoration:none;font-size:15px}
-nav a.on,nav a:hover{color:var(--accent-ink)}
-main{max-width:760px;margin:0 auto;padding:28px 20px 60px}
+.langs button{background:none;border:1px solid var(--line);color:var(--muted);border-radius:8px;padding:4px 10px;font:inherit;font-size:14px;cursor:pointer;margin-left:4px}
+.langs button.on{border-color:var(--accent);color:var(--accent-ink);font-weight:600}
+.fblink,.langs{white-space:nowrap;flex:none}.langs{display:flex}
+.fblink{font-size:14px;font-weight:600;text-decoration:none;color:#06312b;background:var(--accent);padding:5px 12px;border-radius:8px}
+@media (max-width:480px){header .bar{padding:12px 14px;gap:8px}.langs button{padding:3px 7px;margin-left:3px;font-size:13px}.fblink{padding:5px 10px;font-size:13px}}
+.tabs{max-width:760px;margin:0 auto;padding:12px 20px 0;display:flex;gap:16px;flex-wrap:wrap}
+.tabs a{color:var(--muted);text-decoration:none;font-size:15px}
+.tabs a.on{color:var(--accent-ink);font-weight:600}
+main{max-width:760px;margin:0 auto;padding:20px 20px 60px}
 h1{font-size:30px;line-height:1.2;margin:8px 0 4px}
-h2{font-size:21px;margin:36px 0 8px;padding-top:4px}
+h2{font-size:21px;margin:36px 0 8px}
 .updated{color:var(--muted);font-size:14px;margin:0 0 20px}
 .lead{font-size:17px;background:var(--card);border-left:4px solid var(--accent);padding:14px 16px;border-radius:8px}
 a{color:var(--accent-ink)}
@@ -31,22 +37,54 @@ ul,ol{padding-left:22px}li{margin:4px 0}
 .steps li{margin:8px 0}
 footer{border-top:1px solid var(--line);color:var(--muted);font-size:14px}
 footer .bar{justify-content:space-between}
-.cards{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin-top:24px}
-.cards a{display:block;padding:16px;border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--fg);background:var(--card)}
-.cards a b{display:block;color:var(--accent-ink);margin-bottom:4px}
+.lang-block{display:none}.lang-block.show{display:block}
 </style>
 </head>
 <body>
-<header><div class="bar"><a class="logo" href="/">MY<span>KARR</span></a><nav><a href="/privacy">Privacy Policy</a><a href="/terms">Terms of Service</a><a href="/delete-account" class=on>Delete your account</a></nav></div></header>
+<header><div class="bar">
+  <a class="logo" href="/">MY<span>KARR</span></a>
+  <a class="fblink" href="/feedback" data-ui="fb">Atsauksmes</a>
+  <div class="langs"><button data-set="lv">LV</button><button data-set="en">EN</button><button data-set="ru">RU</button></div>
+</div></header>
+<nav class="tabs"><a href="/privacy" data-ui="privacy">Privātuma politika</a><a href="/terms" data-ui="terms">Lietošanas noteikumi</a><a href="/delete-account" data-ui="delete-account" class=on>Konta dzēšana</a></nav>
 <main>
+<div class="lang-block show" data-lang="lv" lang="lv">
+<h1>MYKARR konta dzēšana</h1>
+<p class="updated">Pēdējās izmaiņas: 2026. gada 21. novembris</p>
+<p class="lead">Tu vari jebkurā brīdī izdzēst savu MYKARR kontu (lietotni veido Ralfs Karro) un visus tā tiešsaistes datus. Lietotnē tas aizņem minūti.</p>
+
+<h2>Lietotnē</h2>
+<ol class="steps">
+<li>Atver MYKARR un ej uz cilni <b>Profils</b>.</li>
+<li>Ritini līdz kartītei <b>Konts</b> pašā apakšā un nospied <b>Dzēst kontu</b>.</li>
+<li>Apstiprini. Tavs konts un tā tiešsaistes dati tiek izdzēsti.</li>
+</ol>
+<p>Gribi vispirms kopiju? Pirms dzēšanas izveido rezerves kopiju sadaļā Iestatījumi → Dublēšana un atjaunošana.</p>
+
+<h2>Bez lietotnes</h2>
+<p>Uzraksti uz <a href="mailto:app.mykarr@gmail.com">app.mykarr@gmail.com</a> no e-pasta, ko izmanto MYKARR, ar tematu "Dzēst manu kontu". Mēs to izdzēsīsim un apstiprināsim e-pastā, parasti dažu dienu laikā un vienmēr 30 dienu laikā.</p>
+
+<h2>Kas tiek izdzēsts</h2>
+<ul>
+<li>Tavs konts: e-pasts, dzimšanas datums, pieteikšanās dati</li>
+<li>Tavs profils: segvārds, apraksts, valsts, pilsēta, profila bilde</li>
+<li>Visi tava auto dati: auto, nobraukums, servisa ieraksti, degviela, atgādinājumi, sodi, tūnings</li>
+<li>Visas tiešsaistē glabātās bildes, čeki, rēķini un PDF faili</li>
+<li>Tava skenēšanas vēsture</li>
+</ul>
+<p>Viss tiek izdzēsts 30 dienu laikā, ieskaitot mūsu pakalpojumu sniedzēju rezerves kopijas. Servera žurnālus drošības nolūkos glabājam līdz 90 dienām, tad tie tiek izdzēsti. Pēc tam nekas netiek saglabāts.</p>
+<p>Dati, kas ir tikai tavā telefonā, paliek tur, līdz tu tos izdzēs vai noņem lietotni.</p>
+
+</div>
+<div class="lang-block" data-lang="en" lang="en">
 <h1>Delete your MYKARR account</h1>
-<p class="updated">Last updated: 20 November 2026</p>
+<p class="updated">Last updated: 21 November 2026</p>
 <p class="lead">You can delete your MYKARR account (app by Ralfs Karro) and all its online data at any time. It takes a minute in the app.</p>
 
 <h2>In the app</h2>
 <ol class="steps">
-<li>Open MYKARR and go to <b>Settings</b>.</li>
-<li>Tap <b>Account</b>, then <b>Delete account</b>.</li>
+<li>Open MYKARR and go to the <b>Profile</b> tab.</li>
+<li>Scroll to the <b>Account</b> card at the bottom and tap <b>Delete account</b>.</li>
 <li>Confirm. Your account and its online data are deleted.</li>
 </ol>
 <p>Want a copy first? Make a backup in Settings → Backup &amp; restore before you delete.</p>
@@ -65,7 +103,49 @@ footer .bar{justify-content:space-between}
 <p>Everything is removed within 30 days, including backups held by our providers. Server logs are kept for up to 90 days for security, then deleted. Nothing is kept after that.</p>
 <p>Data that is only on your phone stays there until you delete it or uninstall the app.</p>
 
+</div>
+<div class="lang-block" data-lang="ru" lang="ru">
+<h1>Удаление аккаунта MYKARR</h1>
+<p class="updated">Последнее обновление: 21 ноября 2026 г.</p>
+<p class="lead">Ты можешь в любой момент удалить свой аккаунт MYKARR (приложение от Ralfs Karro) и все его онлайн-данные. В приложении это займёт минуту.</p>
+
+<h2>В приложении</h2>
+<ol class="steps">
+<li>Открой MYKARR и перейди на вкладку <b>Профиль</b>.</li>
+<li>Прокрути до карточки <b>«Аккаунт»</b> внизу и нажми <b>Удалить аккаунт</b>.</li>
+<li>Подтверди. Твой аккаунт и его онлайн-данные будут удалены.</li>
+</ol>
+<p>Хочешь сначала копию? Перед удалением сделай резервную копию в Настройки → Резервная копия.</p>
+
+<h2>Без приложения</h2>
+<p>Напиши на <a href="mailto:app.mykarr@gmail.com">app.mykarr@gmail.com</a> с адреса, который используешь для MYKARR, с темой «Удалить мой аккаунт». Мы удалим его и подтвердим по e-mail, обычно в течение нескольких дней и всегда в течение 30.</p>
+
+<h2>Что удаляется</h2>
+<ul>
+<li>Твой аккаунт: e-mail, дата рождения, данные для входа</li>
+<li>Твой профиль: ник, описание, страна, город, аватар</li>
+<li>Все данные о машинах: машины, пробег, записи о сервисе, топливо, напоминания, штрафы, тюнинг</li>
+<li>Все фото, чеки, счета и PDF, хранящиеся онлайн</li>
+<li>Твоя история сканирований</li>
+</ul>
+<p>Всё удаляется в течение 30 дней, включая резервные копии у наших поставщиков. Серверные журналы хранятся до 90 дней в целях безопасности, затем удаляются. После этого ничего не сохраняется.</p>
+<p>Данные, которые есть только на твоём телефоне, остаются там, пока ты их не удалишь или не удалишь приложение.</p>
+
+</div>
 </main>
 <footer><div class="bar"><span>© 2026 Ralfs Karro · Mārupe, Latvia</span><a href="mailto:app.mykarr@gmail.com">app.mykarr@gmail.com</a></div></footer>
+<script>
+const UI={"lv": {"fb": "Atsauksmes", "privacy": "Privātuma politika", "terms": "Lietošanas noteikumi", "delete-account": "Konta dzēšana", "home": "Sākums"}, "en": {"fb": "Feedback", "privacy": "Privacy Policy", "terms": "Terms of Service", "delete-account": "Delete account", "home": "Home"}, "ru": {"fb": "Отзывы", "privacy": "Политика конфиденциальности", "terms": "Условия использования", "delete-account": "Удаление аккаунта", "home": "Главная"}};
+const TITLES={"lv": "Konta dzēšana", "en": "Delete your account", "ru": "Удаление аккаунта"};
+function setLang(l){if(!UI[l])l='lv';
+  document.querySelectorAll('.lang-block').forEach(b=>b.classList.toggle('show',b.dataset.lang===l));
+  document.querySelectorAll('[data-ui]').forEach(e=>e.textContent=UI[l][e.dataset.ui]);
+  document.querySelectorAll('.langs button').forEach(b=>b.classList.toggle('on',b.dataset.set===l));
+  document.documentElement.lang=l;document.title=TITLES[l]+' – MYKARR';
+  try{localStorage.setItem('lang',l)}catch(e){}}
+document.querySelectorAll('.langs button').forEach(b=>b.onclick=()=>setLang(b.dataset.set));
+let start='lv';try{start=localStorage.getItem('lang')||'lv'}catch(e){}
+setLang(start);
+</script>
 </body>
 </html>

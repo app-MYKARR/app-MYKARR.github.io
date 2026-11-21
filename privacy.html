@@ -1,25 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="lv">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Privacy Policy – MYKARR</title>
-<meta name="description" content="How MYKARR handles your data.">
+<title>Privātuma politika – MYKARR</title>
+<link rel="icon" href="icon.png">
 <style>
 :root{--accent:#0DD8BF;--accent-ink:#087a6c;--bg:#ffffff;--fg:#1b1f1e;--muted:#5d6866;--line:#e3e9e8;--card:#f5f8f8}
 @media (prefers-color-scheme:dark){:root{--bg:#121514;--fg:#e8eeed;--muted:#9aa7a5;--line:#2a3130;--card:#1a1f1e;--accent-ink:#0DD8BF}}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 header{border-bottom:1px solid var(--line)}
-.bar{max-width:760px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
-.logo{font-weight:800;letter-spacing:.12em;color:var(--fg);text-decoration:none}
+.bar{max-width:760px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+header .bar{flex-wrap:nowrap;gap:10px}
+.logo{font-weight:800;letter-spacing:.12em;color:var(--fg);text-decoration:none;margin-right:auto}
 .logo span{color:var(--accent)}
-nav{display:flex;gap:16px;flex-wrap:wrap}
-nav a{color:var(--muted);text-decoration:none;font-size:15px}
-nav a.on,nav a:hover{color:var(--accent-ink)}
-main{max-width:760px;margin:0 auto;padding:28px 20px 60px}
+.langs button{background:none;border:1px solid var(--line);color:var(--muted);border-radius:8px;padding:4px 10px;font:inherit;font-size:14px;cursor:pointer;margin-left:4px}
+.langs button.on{border-color:var(--accent);color:var(--accent-ink);font-weight:600}
+.fblink,.langs{white-space:nowrap;flex:none}.langs{display:flex}
+.fblink{font-size:14px;font-weight:600;text-decoration:none;color:#06312b;background:var(--accent);padding:5px 12px;border-radius:8px}
+@media (max-width:480px){header .bar{padding:12px 14px;gap:8px}.langs button{padding:3px 7px;margin-left:3px;font-size:13px}.fblink{padding:5px 10px;font-size:13px}}
+.tabs{max-width:760px;margin:0 auto;padding:12px 20px 0;display:flex;gap:16px;flex-wrap:wrap}
+.tabs a{color:var(--muted);text-decoration:none;font-size:15px}
+.tabs a.on{color:var(--accent-ink);font-weight:600}
+main{max-width:760px;margin:0 auto;padding:20px 20px 60px}
 h1{font-size:30px;line-height:1.2;margin:8px 0 4px}
-h2{font-size:21px;margin:36px 0 8px;padding-top:4px}
+h2{font-size:21px;margin:36px 0 8px}
 .updated{color:var(--muted);font-size:14px;margin:0 0 20px}
 .lead{font-size:17px;background:var(--card);border-left:4px solid var(--accent);padding:14px 16px;border-radius:8px}
 a{color:var(--accent-ink)}
@@ -31,16 +37,72 @@ ul,ol{padding-left:22px}li{margin:4px 0}
 .steps li{margin:8px 0}
 footer{border-top:1px solid var(--line);color:var(--muted);font-size:14px}
 footer .bar{justify-content:space-between}
-.cards{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin-top:24px}
-.cards a{display:block;padding:16px;border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--fg);background:var(--card)}
-.cards a b{display:block;color:var(--accent-ink);margin-bottom:4px}
+.lang-block{display:none}.lang-block.show{display:block}
 </style>
 </head>
 <body>
-<header><div class="bar"><a class="logo" href="/">MY<span>KARR</span></a><nav><a href="/privacy" class=on>Privacy Policy</a><a href="/terms">Terms of Service</a><a href="/delete-account">Delete your account</a></nav></div></header>
+<header><div class="bar">
+  <a class="logo" href="/">MY<span>KARR</span></a>
+  <a class="fblink" href="/feedback" data-ui="fb">Atsauksmes</a>
+  <div class="langs"><button data-set="lv">LV</button><button data-set="en">EN</button><button data-set="ru">RU</button></div>
+</div></header>
+<nav class="tabs"><a href="/privacy" data-ui="privacy" class=on>Privātuma politika</a><a href="/terms" data-ui="terms">Lietošanas noteikumi</a><a href="/delete-account" data-ui="delete-account">Konta dzēšana</a></nav>
 <main>
+<div class="lang-block show" data-lang="lv" lang="lv">
+<h1>MYKARR – Privātuma politika</h1>
+<p class="updated">Pēdējās izmaiņas: 2026. gada 21. novembris</p>
+<p class="lead">MYKARR palīdz sekot līdzi tavam auto: servisam, degvielai, atgādinājumiem, sodiem un tūningam. Šī politika vienkāršiem vārdiem izskaidro, kādus datus lietotne izmanto, kāpēc, un ko tu vari darīt. MYKARR var lietot arī bez konta, un tad viss paliek tavā telefonā.</p>
+
+<h2>Kas mēs esam</h2>
+<p>MYKARR veido <b>Ralfs Karro</b>, Drustu iela 18A, Mārupe, Latvija ("mēs"). Mēs esam šeit aprakstīto datu pārzinis.</p>
+<p>Jautājumi vai pieprasījumi par taviem datiem: <b><a href="mailto:app.mykarr@gmail.com">app.mykarr@gmail.com</a></b>. Atbildam 30 dienu laikā, parasti daudz ātrāk.</p>
+
+<h2>Kādus datus MYKARR izmanto</h2>
+<div class="table"><table><thead><tr><th>Dati</th><th>Piemēri</th><th>Kur tie glabājas</th></tr></thead><tbody><tr><td>Tava auto dati</td><td>Auto, nobraukums, servisa ieraksti, degvielas uzpildes, atgādinājumi, sodi, tūnings un detaļas, "Mana auto dati" (riepu izmēri, eļļa, akumulators)</td><td>Tavā telefonā. Ar kontu arī mūsu serveros</td></tr><tr><td>Bildes un faili</td><td>Auto bildes, čeki, rēķini un PDF faili, ko pievieno vai noskenē</td><td>Tavā telefonā. Ar kontu arī mūsu failu krātuvē</td></tr><tr><td>Konts</td><td>E-pasta adrese, dzimšanas datums (lai pārliecinātos, ka tev ir vismaz 18 gadi), pieteikšanās veids (e-pasts vai Google), vārds un profila bilde, ja Google tos nodod</td><td>Mūsu serveros (tikai ar kontu)</td></tr><tr><td>Profils</td><td>Segvārds, apraksts, valsts, pilsēta, profila bilde — viss pēc izvēles</td><td>Mūsu serveros (tikai ar kontu)</td></tr><tr><td>Skenēšanas lietojums</td><td>Kad skenēji un cik skenēšanu šomēnes vēl atlicis</td><td>Mūsu serveros (tikai ar kontu)</td></tr><tr><td>Atsauksmes mājaslapā</td><td>Tavs vērtējums un ziņa, un, ja pats norādi: vārds, telefona modelis un e-pasts atbildei</td><td>Mūsu serveros, tikai ja nosūti atsauksmju formu</td></tr><tr><td>Iestatījumi</td><td>Valoda, tēma, paziņojumu izvēles</td><td>Tikai tavā telefonā</td></tr></tbody></table></div>
+<p>Mēs <b>neizmantojam</b> reklāmas, analītikas vai izsekošanas rīkus un nevācam tavu atrašanās vietu, kontaktus vai citus datus no tava telefona.</p>
+<p><b>Skenēšana.</b> Kad noskenē čeku, rēķinu vai detaļu, bilde vai PDF tiek nosūtīta Google Gemini mākslīgajam intelektam, lai to nolasītu. Lietotnē atgriežas tikai atrastais teksts. Oriģināls paliek pie tava ieraksta, tāpat kā jebkura cita pievienotā bilde.</p>
+<p><b>Paziņojumi.</b> Atgādinājumus ieplāno tavs telefons. Mūsu pusē neviens paziņojumu serviss netiek izmantots.</p>
+
+<h2>Kāpēc mēs tos izmantojam</h2>
+<p>Tavus datus izmantojam tikai tam, lai MYKARR tev darbotos. Mēs tos nekad nepārdodam un neizmantojam reklāmai.</p>
+<div class="table"><table><thead><tr><th>Mērķis</th><th>Juridiskais pamats (VDAR)</th></tr></thead><tbody><tr><td>Konta uzturēšana, datu sinhronizēšana starp telefoniem un rezerves kopijas</td><td>Līguma ar tevi izpilde (6. panta 1. punkta b) apakšpunkts)</td></tr><tr><td>Čeku, rēķinu un detaļu nolasīšana, kad nospied Skenēt</td><td>Līguma ar tevi izpilde (6. panta 1. punkta b) apakšpunkts)</td></tr><tr><td>Skenēšanu skaitīšana, lai mēneša limits strādātu un serviss paliktu godīgs</td><td>Mūsu leģitīmās intereses novērst ļaunprātīgu izmantošanu (6. panta 1. punkta f) apakšpunkts)</td></tr><tr><td>Tavu atsauksmju lasīšana, lai uzlabotu MYKARR, un atbilde, ja to lūdzi</td><td>Mūsu leģitīmās intereses uzlabot lietotni (6. panta 1. punkta f) apakšpunkts)</td></tr><tr><td>Atbildes uz taviem e-pastiem un pieprasījumiem</td><td>Līguma izpilde vai mūsu leģitīmās intereses tev palīdzēt</td></tr><tr><td>Servisa drošība un kļūdu labošana (servera žurnāli)</td><td>Mūsu leģitīmās intereses (6. panta 1. punkta f) apakšpunkts)</td></tr><tr><td>Juridisko pienākumu izpilde</td><td>Juridisks pienākums (6. panta 1. punkta c) apakšpunkts)</td></tr></tbody></table></div>
+
+<h2>Kas vēl tos apstrādā</h2>
+<p>Daži uzticami pakalpojumi palīdz mums darbināt lietotni. Tie apstrādā datus tikai pēc mūsu norādījumiem, saskaņā ar datu apstrādes līgumiem.</p>
+<div class="table"><table><thead><tr><th>Pakalpojums</th><th>Ko tas dara MYKARR</th><th>Kādus datus apstrādā</th></tr></thead><tbody><tr><td><a href="https://supabase.com/privacy">Supabase</a></td><td>Konti, datubāze un failu krātuve</td><td>Konts, profils, auto dati, bildes un faili, skenēšanas lietojums, atsauksmes</td></tr><tr><td><a href="https://www.powersync.com/privacy-policy">PowerSync</a></td><td>Sinhronizē datus starp tavu telefonu un mūsu datubāzi</td><td>Auto dati un profils sinhronizācijas laikā</td></tr><tr><td><a href="https://policies.google.com/privacy">Google Sign-In</a></td><td>Ļauj pieteikties ar Google kontu, ja to izvēlies</td><td>Tavs Google e-pasts, vārds un bilde</td></tr><tr><td><a href="https://ai.google.dev/gemini-api/terms">Google Gemini API</a> (maksas versija)</td><td>Nolasa bildes un PDF failus, ko skenē</td><td>Tikai skenētā bilde vai PDF un no tā nolasītais teksts</td></tr></tbody></table></div>
+<p>Maksas Gemini API versijā Google neizmanto skenēto saturu sava mākslīgā intelekta apmācībai. Tas to glabā ierobežotu laiku tikai tam, lai novērstu ļaunprātīgu izmantošanu un izpildītu likuma prasības.</p>
+<p><b>Auto kopīgošana (vēlāk).</b> Plānojam ļaut kopīgot auto ar ģimeni vai draugiem. Pirms tas būs iespējams, atjaunināsim šo politiku un paskaidrosim, kurš ko var redzēt.</p>
+<p>Mēs varam izpaust datus arī tad, ja to prasa likums, piemēram, tiesai vai policijai pēc likumīga pieprasījuma.</p>
+
+<h2>Kur dati glabājas un cik ilgi</h2>
+<p>Mūsu datubāze, failu krātuve un sinhronizācijas serviss atrodas <b>Eiropas Savienībā</b>. Google var īslaicīgi apstrādāt skenētu bildi savos serveros citās valstīs; šo nodošanu sedz Google datu apstrādes noteikumi un ES standarta līguma klauzulas.</p>
+<div class="table"><table><thead><tr><th>Dati</th><th>Cik ilgi glabājam</th></tr></thead><tbody><tr><td>Konts, profils, auto dati, bildes un faili</td><td>Līdz tu tos izdzēs vai izdzēs kontu</td></tr><tr><td>Skenēšanas lietojums</td><td>Līdz tu izdzēs kontu</td></tr><tr><td>Atsauksmes mājaslapā</td><td>Līdz 2 gadiem vai ātrāk, ja palūdz tās izdzēst</td></tr><tr><td>Servera žurnāli</td><td>Līdz 90 dienām</td></tr><tr><td>Dati tavā telefonā</td><td>Līdz tu tos izdzēs vai noņem lietotni</td></tr></tbody></table></div>
+<p>Kad izdzēs kontu, tā tiešsaistes dati tiek izdzēsti 30 dienu laikā, ieskaitot mūsu pakalpojumu sniedzēju rezerves kopijas.</p>
+<p>Dati ir šifrēti ceļā starp tavu telefonu un mūsu serveriem. Piekļuve datubāzei ir slēgta katram kontam atsevišķi, tāpēc tu redzi tikai savus auto.</p>
+
+<h2>Tavas tiesības</h2>
+<p>Saskaņā ar VDAR tu vari:</p>
+<ul>
+<li><b>Redzēt</b> datus, ko par tevi glabājam, un saņemt to kopiju</li>
+<li><b>Labot</b> visu, kas ir nepareizi (lielāko daļu vari labot pats lietotnē)</li>
+<li><b>Dzēst</b> savus datus vai visu kontu</li>
+<li><b>Paņemt tos līdzi</b>: eksportē visu sadaļā Iestatījumi → Dublēšana un atjaunošana</li>
+<li><b>Iebilst</b> pret to, kā tos izmantojam, vai to <b>ierobežot</b></li>
+</ul>
+<p><b>Konta dzēšana.</b> Atver cilni <b>Profils</b>, ritini līdz kartītei Konts pašā apakšā un nospied <b>Dzēst kontu</b>. Tas izdzēš tavu kontu un visus tā tiešsaistes datus. Vari arī uzrakstīt uz <a href="mailto:app.mykarr@gmail.com">app.mykarr@gmail.com</a> no sava konta e-pasta, un mēs to izdarīsim tavā vietā. <a href="/delete-account">Vairāk par konta dzēšanu</a>.</p>
+<p>Ja domā, ka esam ar taviem datiem rīkojušies nepareizi, lūdzu, vispirms pastāsti mums, lai varam to salabot. Tu vari arī iesniegt sūdzību <a href="https://www.dvi.gov.lv">Datu valsts inspekcijā</a> vai savas dzīvesvietas datu aizsardzības iestādē.</p>
+
+<h2>Vecums</h2>
+<p>Lai izveidotu MYKARR kontu vai lietotu skenēšanu, tev jābūt vismaz 18 gadus vecam. Reģistrējoties mēs jautājam tavu dzimšanas datumu, lai to pārbaudītu. Mēs apzināti nevācam datus par jaunākiem cilvēkiem. Ja domā, ka kontu izveidojis bērns, uzraksti mums, un mēs to izdzēsīsim.</p>
+
+<h2>Izmaiņas šajā politikā</h2>
+<p>Ja mainīsim šo politiku, atjaunināsim datumu augšā. Ja izmaiņas ir būtiskas, piemēram, jauns pakalpojums, kas apstrādā tavus datus, pastāstīsim par to lietotnē, pirms tās stājas spēkā.</p>
+<p><b>MYKARR turpina augt.</b> Plānojam pievienot pamācības, tirgu, jautājumus un atbildes un abonēšanas līmeņus. Tie var izmantot jaunus datu veidus, piemēram, sludinājumus vai ierakstus, ko redz citi lietotāji, vai maksājumus, ko apstrādā maksājumu pakalpojumu sniedzējs. Līdz ar tiem mainīsies arī šī politika. Atjaunināsim to pirms katras funkcijas palaišanas un paziņosim lietotnē, lai tu vienmēr zinātu, kas jauns, pirms to izmanto.</p>
+
+</div>
+<div class="lang-block" data-lang="en" lang="en">
 <h1>MYKARR – Privacy Policy</h1>
-<p class="updated">Last updated: 20 November 2026</p>
+<p class="updated">Last updated: 21 November 2026</p>
 <p class="lead">MYKARR keeps track of your car: services, fuel, reminders, tickets and builds. This policy explains, in plain words, what data the app uses, why, and what you can do about it. You can use MYKARR without an account, and then everything stays on your phone.</p>
 
 <h2>Who we are</h2>
@@ -59,7 +121,7 @@ footer .bar{justify-content:space-between}
 
 <h2>Who else handles it</h2>
 <p>A few trusted services help us run the app. They process data only on our instructions, under data processing agreements.</p>
-<div class="table"><table><thead><tr><th>Service</th><th>What it does for MYKARR</th><th>Data it handles</th></tr></thead><tbody><tr><td><a href="https://supabase.com/privacy">Supabase</a></td><td>Accounts, database and file storage</td><td>Account, profile, car data, photos and files, scan usage</td></tr><tr><td><a href="https://www.powersync.com/privacy-policy">PowerSync</a></td><td>Syncs your data between your phone and our database</td><td>Car data and profile while syncing</td></tr><tr><td><a href="https://policies.google.com/privacy">Google Sign-In</a></td><td>Lets you sign in with your Google account, if you choose to</td><td>Your Google email, name and picture</td></tr><tr><td><a href="https://ai.google.dev/gemini-api/terms">Google Gemini API</a> (paid tier)</td><td>Reads the photos and PDFs you scan</td><td>Only the photo or PDF you scan and the text read from it</td></tr></tbody></table></div>
+<div class="table"><table><thead><tr><th>Service</th><th>What it does for MYKARR</th><th>Data it handles</th></tr></thead><tbody><tr><td><a href="https://supabase.com/privacy">Supabase</a></td><td>Accounts, database and file storage</td><td>Account, profile, car data, photos and files, scan usage, feedback</td></tr><tr><td><a href="https://www.powersync.com/privacy-policy">PowerSync</a></td><td>Syncs your data between your phone and our database</td><td>Car data and profile while syncing</td></tr><tr><td><a href="https://policies.google.com/privacy">Google Sign-In</a></td><td>Lets you sign in with your Google account, if you choose to</td><td>Your Google email, name and picture</td></tr><tr><td><a href="https://ai.google.dev/gemini-api/terms">Google Gemini API</a> (paid tier)</td><td>Reads the photos and PDFs you scan</td><td>Only the photo or PDF you scan and the text read from it</td></tr></tbody></table></div>
 <p>Google does not use scanned content to train its AI on the paid Gemini API. It keeps it for a limited time only to prevent abuse and meet legal requirements.</p>
 <p><b>Car sharing (coming later).</b> We plan to let you share a car with family or friends. Before that's possible, we'll update this policy to explain who can see what.</p>
 <p>We may also disclose data if the law requires it, for example to a court or the police with a valid legal request.</p>
@@ -79,7 +141,7 @@ footer .bar{justify-content:space-between}
 <li><b>Take it with you</b>: export everything in Settings → Backup &amp; restore</li>
 <li><b>Object</b> to or <b>limit</b> how we use it</li>
 </ul>
-<p><b>Deleting your account.</b> Go to Settings → Account → Delete account. This removes your account and all its online data. You can also email <a href="mailto:app.mykarr@gmail.com">app.mykarr@gmail.com</a> from your account's address and we'll do it for you. <a href="/delete-account">More about deleting your account</a>.</p>
+<p><b>Deleting your account.</b> Open the <b>Profile</b> tab, scroll to the Account card at the bottom and tap <b>Delete account</b>. This removes your account and all its online data. You can also email <a href="mailto:app.mykarr@gmail.com">app.mykarr@gmail.com</a> from your account's address and we'll do it for you. <a href="/delete-account">More about deleting your account</a>.</p>
 <p>If you think we've handled your data wrongly, please tell us first so we can fix it. You can also complain to the Latvian Data State Inspectorate (<a href="https://www.dvi.gov.lv">Datu valsts inspekcija</a>) or the data protection authority where you live.</p>
 
 <h2>Age</h2>
@@ -89,7 +151,73 @@ footer .bar{justify-content:space-between}
 <p>If we change this policy, we'll update the date at the top. If a change matters, for example a new service that handles your data, we'll tell you in the app before it takes effect.</p>
 <p><b>MYKARR keeps growing.</b> We plan to add features such as tutorials, a marketplace, Q&amp;A and membership tiers. These may use new kinds of data, for example listings or posts that other users can see, or payments handled by a payment provider. This policy will change as they arrive. We'll update it before each feature launches and tell you in the app, so you always know what's new before you use it.</p>
 
+</div>
+<div class="lang-block" data-lang="ru" lang="ru">
+<h1>MYKARR – Политика конфиденциальности</h1>
+<p class="updated">Последнее обновление: 21 ноября 2026 г.</p>
+<p class="lead">MYKARR помогает следить за твоей машиной: сервисом, топливом, напоминаниями, штрафами и тюнингом. Эта политика простыми словами объясняет, какие данные использует приложение, зачем и что ты можешь с этим сделать. MYKARR можно пользоваться и без аккаунта — тогда всё остаётся на твоём телефоне.</p>
+
+<h2>Кто мы</h2>
+<p>MYKARR создаёт <b>Ralfs Karro</b>, Drustu iela 18A, Mārupe, Латвия («мы»). Мы являемся контролёром описанных здесь данных.</p>
+<p>Вопросы и запросы о твоих данных: <b><a href="mailto:app.mykarr@gmail.com">app.mykarr@gmail.com</a></b>. Отвечаем в течение 30 дней, обычно гораздо быстрее.</p>
+
+<h2>Какие данные использует MYKARR</h2>
+<div class="table"><table><thead><tr><th>Данные</th><th>Примеры</th><th>Где хранятся</th></tr></thead><tbody><tr><td>Данные о машине</td><td>Машины, пробег, записи о сервисе, заправки, напоминания, штрафы, тюнинг и детали, «Данные моей машины» (размеры шин, масло, аккумулятор)</td><td>На твоём телефоне. С аккаунтом — также на наших серверах</td></tr><tr><td>Фото и файлы</td><td>Фото машины, чеки, счета и PDF, которые ты прикрепляешь или сканируешь</td><td>На твоём телефоне. С аккаунтом — также в нашем файловом хранилище</td></tr><tr><td>Аккаунт</td><td>Адрес эл. почты, дата рождения (чтобы убедиться, что тебе есть 18), способ входа (эл. почта или Google), имя и фото профиля, если их передаёт Google</td><td>На наших серверах (только с аккаунтом)</td></tr><tr><td>Профиль</td><td>Ник, описание, страна, город, аватар — всё по желанию</td><td>На наших серверах (только с аккаунтом)</td></tr><tr><td>Использование сканирования</td><td>Когда ты сканировал и сколько сканирований осталось в этом месяце</td><td>На наших серверах (только с аккаунтом)</td></tr><tr><td>Отзывы на сайте</td><td>Твоя оценка и сообщение, а если сам укажешь — имя, модель телефона и e-mail для ответа</td><td>На наших серверах, только если ты отправишь форму отзыва</td></tr><tr><td>Настройки</td><td>Язык, тема, настройки уведомлений</td><td>Только на твоём телефоне</td></tr></tbody></table></div>
+<p>Мы <b>не</b> используем рекламу, аналитику или инструменты отслеживания и не собираем твоё местоположение, контакты или другие данные с телефона.</p>
+<p><b>Сканирование.</b> Когда ты сканируешь чек, счёт или деталь, фото или PDF отправляется в Google Gemini AI, чтобы его прочитать. В приложение возвращается только найденный текст. Оригинал остаётся в твоей записи, как и любое другое прикреплённое фото.</p>
+<p><b>Уведомления.</b> Напоминания планирует твой телефон. Никакой сервис уведомлений на нашей стороне не используется.</p>
+
+<h2>Зачем мы их используем</h2>
+<p>Мы используем твои данные только для того, чтобы MYKARR у тебя работал. Мы никогда их не продаём и не используем для рекламы.</p>
+<div class="table"><table><thead><tr><th>Цель</th><th>Правовое основание (GDPR)</th></tr></thead><tbody><tr><td>Работа аккаунта, синхронизация данных между телефонами и резервные копии</td><td>Исполнение договора с тобой (ст. 6(1)(b))</td></tr><tr><td>Чтение чеков, счетов и деталей, когда ты нажимаешь «Сканировать»</td><td>Исполнение договора с тобой (ст. 6(1)(b))</td></tr><tr><td>Подсчёт сканирований, чтобы месячный лимит работал, а сервис оставался честным</td><td>Наш законный интерес в предотвращении злоупотреблений (ст. 6(1)(f))</td></tr><tr><td>Чтение твоих отзывов, чтобы улучшать MYKARR, и ответ, если ты его просил</td><td>Наш законный интерес в улучшении приложения (ст. 6(1)(f))</td></tr><tr><td>Ответы на твои письма и запросы</td><td>Исполнение договора или наш законный интерес помочь тебе</td></tr><tr><td>Безопасность сервиса и исправление ошибок (серверные журналы)</td><td>Наш законный интерес (ст. 6(1)(f))</td></tr><tr><td>Выполнение юридических обязательств</td><td>Юридическая обязанность (ст. 6(1)(c))</td></tr></tbody></table></div>
+
+<h2>Кто ещё их обрабатывает</h2>
+<p>Несколько надёжных сервисов помогают нам поддерживать работу приложения. Они обрабатывают данные только по нашим указаниям, по договорам об обработке данных.</p>
+<div class="table"><table><thead><tr><th>Сервис</th><th>Что делает для MYKARR</th><th>Какие данные обрабатывает</th></tr></thead><tbody><tr><td><a href="https://supabase.com/privacy">Supabase</a></td><td>Аккаунты, база данных и файловое хранилище</td><td>Аккаунт, профиль, данные о машине, фото и файлы, использование сканирования, отзывы</td></tr><tr><td><a href="https://www.powersync.com/privacy-policy">PowerSync</a></td><td>Синхронизирует данные между твоим телефоном и нашей базой данных</td><td>Данные о машине и профиль во время синхронизации</td></tr><tr><td><a href="https://policies.google.com/privacy">Google Sign-In</a></td><td>Позволяет войти с аккаунтом Google, если ты этого хочешь</td><td>Твой e-mail Google, имя и фото</td></tr><tr><td><a href="https://ai.google.dev/gemini-api/terms">Google Gemini API</a> (платная версия)</td><td>Читает фото и PDF, которые ты сканируешь</td><td>Только сканируемое фото или PDF и прочитанный из него текст</td></tr></tbody></table></div>
+<p>В платной версии Gemini API Google не использует отсканированные материалы для обучения своего ИИ. Он хранит их ограниченное время только для предотвращения злоупотреблений и выполнения требований закона.</p>
+<p><b>Общая машина (позже).</b> Мы планируем дать возможность делиться машиной с семьёй или друзьями. Прежде чем это станет возможным, мы обновим эту политику и объясним, кто что может видеть.</p>
+<p>Мы также можем раскрыть данные, если этого требует закон, например суду или полиции по законному запросу.</p>
+
+<h2>Где хранятся данные и как долго</h2>
+<p>Наша база данных, файловое хранилище и сервис синхронизации находятся в <b>Европейском союзе</b>. Google может кратковременно обрабатывать отсканированное фото на своих серверах в других странах; такая передача покрывается условиями обработки данных Google и стандартными договорными положениями ЕС.</p>
+<div class="table"><table><thead><tr><th>Данные</th><th>Сколько храним</th></tr></thead><tbody><tr><td>Аккаунт, профиль, данные о машине, фото и файлы</td><td>Пока ты их не удалишь или не удалишь аккаунт</td></tr><tr><td>Использование сканирования</td><td>Пока ты не удалишь аккаунт</td></tr><tr><td>Отзывы на сайте</td><td>До 2 лет или раньше, если попросишь удалить</td></tr><tr><td>Серверные журналы</td><td>До 90 дней</td></tr><tr><td>Данные на твоём телефоне</td><td>Пока ты их не удалишь или не удалишь приложение</td></tr></tbody></table></div>
+<p>Когда ты удаляешь аккаунт, его онлайн-данные удаляются в течение 30 дней, включая резервные копии у наших поставщиков.</p>
+<p>Данные шифруются при передаче между твоим телефоном и нашими серверами. Доступ к базе данных закрыт для каждого аккаунта отдельно, поэтому ты видишь только свои машины.</p>
+
+<h2>Твои права</h2>
+<p>Согласно GDPR ты можешь:</p>
+<ul>
+<li><b>Посмотреть</b> данные, которые мы о тебе храним, и получить их копию</li>
+<li><b>Исправить</b> всё, что неверно (большую часть можно исправить в приложении)</li>
+<li><b>Удалить</b> свои данные или весь аккаунт</li>
+<li><b>Забрать их с собой</b>: экспортируй всё в Настройки → Резервная копия</li>
+<li><b>Возразить</b> против того, как мы их используем, или <b>ограничить</b> это</li>
+</ul>
+<p><b>Удаление аккаунта.</b> Открой вкладку <b>Профиль</b>, прокрути до карточки «Аккаунт» внизу и нажми <b>Удалить аккаунт</b>. Это удалит твой аккаунт и все его онлайн-данные. Ты также можешь написать на <a href="mailto:app.mykarr@gmail.com">app.mykarr@gmail.com</a> с адреса своего аккаунта, и мы сделаем это за тебя. <a href="/delete-account">Подробнее об удалении аккаунта</a>.</p>
+<p>Если считаешь, что мы неправильно обошлись с твоими данными, пожалуйста, сначала скажи нам, чтобы мы могли это исправить. Ты также можешь подать жалобу в Государственную инспекцию данных Латвии (<a href="https://www.dvi.gov.lv">Datu valsts inspekcija</a>) или в орган защиты данных по месту жительства.</p>
+
+<h2>Возраст</h2>
+<p>Чтобы создать аккаунт MYKARR или пользоваться сканированием, тебе должно быть не меньше 18 лет. При регистрации мы спрашиваем дату рождения, чтобы это проверить. Мы сознательно не собираем данные лиц младше этого возраста. Если считаешь, что аккаунт создал ребёнок, напиши нам, и мы его удалим.</p>
+
+<h2>Изменения этой политики</h2>
+<p>Если мы изменим эту политику, мы обновим дату вверху. Если изменение важное, например новый сервис, который обрабатывает твои данные, мы сообщим об этом в приложении до того, как оно вступит в силу.</p>
+<p><b>MYKARR продолжает расти.</b> Мы планируем добавить инструкции, рынок, вопросы и ответы и уровни подписки. Они могут использовать новые виды данных, например объявления или публикации, которые видят другие пользователи, или платежи, которые обрабатывает платёжный провайдер. Вместе с ними будет меняться и эта политика. Мы будем обновлять её до запуска каждой функции и сообщать в приложении, чтобы ты всегда знал, что нового, прежде чем этим пользоваться.</p>
+
+</div>
 </main>
 <footer><div class="bar"><span>© 2026 Ralfs Karro · Mārupe, Latvia</span><a href="mailto:app.mykarr@gmail.com">app.mykarr@gmail.com</a></div></footer>
+<script>
+const UI={"lv": {"fb": "Atsauksmes", "privacy": "Privātuma politika", "terms": "Lietošanas noteikumi", "delete-account": "Konta dzēšana", "home": "Sākums"}, "en": {"fb": "Feedback", "privacy": "Privacy Policy", "terms": "Terms of Service", "delete-account": "Delete account", "home": "Home"}, "ru": {"fb": "Отзывы", "privacy": "Политика конфиденциальности", "terms": "Условия использования", "delete-account": "Удаление аккаунта", "home": "Главная"}};
+const TITLES={"lv": "Privātuma politika", "en": "Privacy Policy", "ru": "Политика конфиденциальности"};
+function setLang(l){if(!UI[l])l='lv';
+  document.querySelectorAll('.lang-block').forEach(b=>b.classList.toggle('show',b.dataset.lang===l));
+  document.querySelectorAll('[data-ui]').forEach(e=>e.textContent=UI[l][e.dataset.ui]);
+  document.querySelectorAll('.langs button').forEach(b=>b.classList.toggle('on',b.dataset.set===l));
+  document.documentElement.lang=l;document.title=TITLES[l]+' – MYKARR';
+  try{localStorage.setItem('lang',l)}catch(e){}}
+document.querySelectorAll('.langs button').forEach(b=>b.onclick=()=>setLang(b.dataset.set));
+let start='lv';try{start=localStorage.getItem('lang')||'lv'}catch(e){}
+setLang(start);
+</script>
 </body>
 </html>
