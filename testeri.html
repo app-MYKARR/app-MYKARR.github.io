@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Testētājiem – MYKARR</title>
+<meta name="description" content="MYKARR beta testa saraksts: ko izmēģināt un kā pastāstīt, kas jāuzlabo.">
+<link rel="icon" href="icon.png">
+<style>
+:root{--accent:#0DD8BF;--accent-ink:#087a6c;--bg:#ffffff;--fg:#1b1f1e;--muted:#5d6866;--line:#e3e9e8;--card:#f5f8f8;--hero:#eafbf8}
+@media (prefers-color-scheme:dark){:root{--bg:#121514;--fg:#e8eeed;--muted:#9aa7a5;--line:#2a3130;--card:#1a1f1e;--accent-ink:#0DD8BF;--hero:#132321}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--accent-ink)}
+header{border-bottom:1px solid var(--line)}
+.bar{max-width:720px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+header .bar{flex-wrap:nowrap;gap:10px}
+.logo{font-weight:800;letter-spacing:.12em;color:var(--fg);text-decoration:none;margin-right:auto}
+.logo span{color:var(--accent)}
+.langs button{background:none;border:1px solid var(--line);color:var(--muted);border-radius:8px;padding:4px 10px;font:inherit;font-size:14px;cursor:pointer;margin-left:4px}
+.langs button.on{border-color:var(--accent);color:var(--accent-ink);font-weight:600}
+.fblink,.langs{white-space:nowrap;flex:none}.langs{display:flex}
+.fblink{font-size:14px;font-weight:600;text-decoration:none;color:#06312b;background:var(--accent);padding:5px 12px;border-radius:8px}
+@media (max-width:480px){header .bar{padding:12px 14px;gap:8px}.langs button{padding:3px 7px;margin-left:3px;font-size:13px}.fblink{padding:5px 10px;font-size:13px}}
+main{max-width:720px;margin:0 auto;padding:28px 20px 60px}
+h1{font-size:32px;line-height:1.2;margin:4px 0 8px}
+.lead{color:var(--muted);font-size:17px;margin:0 0 18px}
+.progress{position:sticky;top:0;z-index:5;background:var(--bg);padding:10px 0 12px;border-bottom:1px solid var(--line);margin-bottom:8px}
+.ptext{display:flex;justify-content:space-between;font-size:14px;color:var(--muted);margin-bottom:6px}
+.ptext b{color:var(--fg)}
+.pbar{height:10px;border-radius:99px;background:var(--line);overflow:hidden}
+.pbar div{height:100%;width:0;background:var(--accent);border-radius:99px;transition:width .3s}
+.before{background:var(--hero);border-radius:16px;padding:16px 18px;margin:18px 0 6px}
+.before h2{font-size:17px;margin:0 0 6px}
+.before ul{margin:0;padding-left:20px}
+.before li{margin:3px 0}
+h2.sec{font-size:20px;margin:30px 0 10px;display:flex;align-items:center;gap:10px}
+h2.sec .ico{font-size:22px}
+.item{display:flex;gap:14px;align-items:flex-start;padding:14px 16px;background:var(--card);border:1px solid var(--line);border-radius:14px;margin-bottom:10px;cursor:pointer;transition:all .15s;-webkit-tap-highlight-color:transparent}
+.item:hover{border-color:var(--accent)}
+.box{flex:none;width:26px;height:26px;border-radius:8px;border:2px solid var(--muted);display:flex;align-items:center;justify-content:center;margin-top:1px;transition:all .15s;color:transparent;font-weight:900}
+.item.done{opacity:.6}
+.item.done .box{background:var(--accent);border-color:var(--accent);color:#06312b}
+.item.done .t{text-decoration:line-through}
+.t{font-weight:600}
+.d{color:var(--muted);font-size:15px;margin-top:2px}
+.tip{display:inline-block;font-size:13px;font-weight:600;color:var(--accent-ink);margin-top:4px}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#06312b;font-weight:700;text-decoration:none;padding:13px 20px;border-radius:14px;font-size:16px}
+.end{text-align:center;background:var(--hero);border-radius:20px;padding:28px 20px;margin-top:30px}
+.end h2{margin:0 0 6px;font-size:24px}
+.end p{color:var(--muted);margin:0 0 16px}
+.reset{background:none;border:0;color:var(--muted);font:inherit;font-size:14px;text-decoration:underline;cursor:pointer;margin-top:14px}
+footer{border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+footer .bar{justify-content:space-between}
+footer nav a{color:var(--muted);text-decoration:none;margin-right:14px}
+</style>
+</head>
+<body>
+<header><div class="bar">
+  <a class="logo" href="/">MY<span>KARR</span></a>
+  <a class="fblink" href="/feedback" data-t="hFb">Atsauksmes</a>
+  <div class="langs"><button data-set="lv">LV</button><button data-set="en">EN</button><button data-set="ru">RU</button></div>
+</div></header>
+
+<main>
+  <h1 data-t="h1">Paldies, ka testē MYKARR! 🙌</h1>
+  <p class="lead" data-t="lead">Šis ir tavs testa saraksts. Ej pa punktiem savā tempā, atzīmē izdarīto, un visu, kas šķiet dīvaini, salūzis vai pietrūkst, raksti atsauksmēs.</p>
+
+  <div class="progress">
+    <div class="ptext"><span data-t="prog">Izdarīts</span><span><b id="pDone">0</b> / <span id="pAll">0</span></span></div>
+    <div class="pbar"><div id="pBar"></div></div>
+  </div>
+
+  <div class="before">
+    <h2 data-t="bH">Pirms sāc</h2>
+    <ul>
+      <li data-t="b1">Vajadzīgs Android telefons. iPhone versija būs vēlāk.</li>
+      <li data-t="b2">Lieto MYKARR kā parasti, ar savu īsto auto. Jo īstāki dati, jo labāks tests.</li>
+      <li data-t="b3">Paturi lietotni telefonā <b>vismaz 2 nedēļas</b> un ieskaties tajā ik pa laikam.</li>
+      <li data-t="b4">Nekas nav “nepareizi”. Ja kaut kas nav skaidrs, tā ir kļūda mūsu pusē, un to ir svarīgi zināt.</li>
+    </ul>
+  </div>
+
+  <div id="list"></div>
+
+  <div class="end">
+    <h2 data-t="eH">Gatavs? Pastāsti, kā gāja!</h2>
+    <p data-t="eP">Katra atsauksme, pat īsa, palīdz MYKARR kļūt labākam.</p>
+    <a class="btn" href="/feedback" data-t="eB">Atstāt atsauksmi</a>
+    <div><button class="reset" id="reset" data-t="reset">Sākt sarakstu no jauna</button></div>
+  </div>
+</main>
+
+<footer><div class="bar">
+  <nav><a href="/" data-t="lHome">Sākums</a><a href="/privacy" data-t="lPriv">Privātuma politika</a><a href="/terms" data-t="lTerms">Lietošanas noteikumi</a></nav>
+  <span>© 2026 Ralfs Karro · Mārupe</span>
+</div></footer>
+
+<script>
+// Each item: [id, title, description, optional tip]. The id keeps a tick
+// remembered even if the wording changes later.
+const LIST={
+lv:[
+ ["🚀","Sākums",[
+  ["install","Instalē MYKARR","Lejupielādē no <a href=\"/\">app-mykarr.github.io</a> un uzinstalē. Ja telefons brīdina par nezināmu lietotni, nospied “Tik un tā instalēt”."],
+  ["intro","Izej cauri ievadam","Izvēlies valodu, pievieno savu auto un iestati eļļas un ziemas riepu atgādinājumus."],
+  ["account","Izveido kontu","Ar e-pastu vai Google. Pārbaudi, vai e-pastā atnāca kods un vai tas strādā.","Ievadi arī dzimšanas datumu."],
+  ["notif","Atļauj paziņojumus","Lai atgādinājumi tevi sasniegtu."]]],
+ ["⛽","Degviela",[
+  ["fuel","Pievieno uzpildi ar roku","Ievadi litrus, summu un staciju."],
+  ["fuelscan","Noskenē degvielas čeku","Nofotografē čeku un pārbaudi, vai viss aizpildījās pareizi.","Šomēnes tev ir 30 skenējumi."],
+  ["fuelstats","Apskaties patēriņu","Pēc dažām uzpildēm parādīsies vidējais patēriņš un lētākās stacijas."]]],
+ ["🔧","Serviss un atgādinājumi",[
+  ["service","Pievieno servisa ierakstu","Piemēram, pēdējo eļļas maiņu. Atzīmē “Atgādināt nākamreiz”.","Pārbaudi, vai ielikās ierastais intervāls."],
+  ["servicescan","Noskenē rēķinu vai detaļu","Servisa rēķinu, riepas sānu vai akumulatora etiķeti."],
+  ["specs","Atver “Mana auto dati”","Auto lapā apakšā. Pamēģini nokopēt kādu rindu vai visu."],
+  ["done","Atzīmē atgādinājumu kā veiktu","Kartītē “Nākamais” nospied “Atzīmēt kā veiktu”."]]],
+ ["🚗","Pārējais",[
+  ["ticket","Pievieno sodu","Pat izdomātu, ar apmaksas termiņu. Pēc tam vari to izdzēst."],
+  ["mod","Pievieno modifikāciju","Ar bildi pirms un pēc, ja tev ir kāds projekts."],
+  ["mileage","Atjaunini nobraukumu","Auto lapā nospied uz nobraukuma rindas."],
+  ["costs","Apskaties izmaksas","Cik auto izmaksājis šogad."]]],
+ ["👤","Profils un konts",[
+  ["profile","Aizpildi profilu","Segvārds, bilde, pilsēta. Par to ir nozīmīte!"],
+  ["badges","Apskaties nozīmītes","Kuras jau esi ieguvis?"],
+  ["signout","Izrakstīties un pieslēgties atpakaļ","Profils → Konts → Izrakstīties. Pēc pieslēgšanās visiem datiem jāatgriežas."],
+  ["settings","Pamēģini iestatījumus","Tumšo režīmu, citu valodu un dublēšanu."]]],
+ ["💬","Atsauksme",[
+  ["feedback","Atstāj atsauksmi","Kas patīk, kas kaitina, kas pietrūkst. <a href=\"/feedback\">Atsauksmju forma</a>."],
+  ["twoweeks","Turpini lietot 2 nedēļas","Pieraksti uzpildes un servisus, kad tie notiek. Tā redzam, kā lietotne strādā ikdienā."]]]],
+en:[
+ ["🚀","Getting started",[
+  ["install","Install MYKARR","Download from <a href=\"/\">app-mykarr.github.io</a> and install it. If your phone warns about an unknown app, tap “Install anyway”."],
+  ["intro","Go through the intro","Pick a language, add your car and set up the oil and winter tire reminders."],
+  ["account","Create an account","With email or Google. Check that the code arrives by email and works.","Enter your date of birth too."],
+  ["notif","Allow notifications","So the reminders can reach you."]]],
+ ["⛽","Fuel",[
+  ["fuel","Add a fill-up by hand","Enter litres, amount and station."],
+  ["fuelscan","Scan a fuel receipt","Take a photo of a receipt and check that everything filled in correctly.","You have 30 scans this month."],
+  ["fuelstats","Check your consumption","After a few fill-ups you'll see average consumption and the cheapest stations."]]],
+ ["🔧","Service and reminders",[
+  ["service","Add a service record","For example your last oil change. Tick “Remind me next time”.","Check that the usual interval was filled in."],
+  ["servicescan","Scan an invoice or a part","A service invoice, a tire sidewall or a battery label."],
+  ["specs","Open “My car's details”","At the bottom of the car page. Try copying one line or everything."],
+  ["done","Mark a reminder as done","On the “Next up” card, tap “Mark as done”."]]],
+ ["🚗","Everything else",[
+  ["ticket","Add a ticket","Even a made-up one, with a pay-by date. You can delete it afterwards."],
+  ["mod","Add a modification","With before and after photos, if you have a project."],
+  ["mileage","Update your mileage","On the car page, tap the mileage row."],
+  ["costs","Check your costs","What your car has cost this year."]]],
+ ["👤","Profile and account",[
+  ["profile","Fill in your profile","Nickname, photo, city. There's a badge for it!"],
+  ["badges","Look at your badges","Which ones have you earned already?"],
+  ["signout","Sign out and back in","Profile → Account → Sign out. After signing in, all your data should come back."],
+  ["settings","Try the settings","Dark mode, another language and backup."]]],
+ ["💬","Feedback",[
+  ["feedback","Leave feedback","What you like, what bugs you, what's missing. <a href=\"/feedback\">Feedback form</a>."],
+  ["twoweeks","Keep using it for 2 weeks","Log fill-ups and services as they happen. That's how we see how the app works day to day."]]]],
+ru:[
+ ["🚀","Начало",[
+  ["install","Установи MYKARR","Скачай с <a href=\"/\">app-mykarr.github.io</a> и установи. Если телефон предупредит о неизвестном приложении, нажми «Всё равно установить»."],
+  ["intro","Пройди вступление","Выбери язык, добавь свою машину и настрой напоминания о масле и зимних шинах."],
+  ["account","Создай аккаунт","Через e-mail или Google. Проверь, что код пришёл на почту и работает.","Введи и дату рождения."],
+  ["notif","Разреши уведомления","Чтобы напоминания до тебя доходили."]]],
+ ["⛽","Топливо",[
+  ["fuel","Добавь заправку вручную","Введи литры, сумму и заправку."],
+  ["fuelscan","Отсканируй чек с заправки","Сфоткай чек и проверь, всё ли заполнилось правильно.","В этом месяце у тебя 30 сканирований."],
+  ["fuelstats","Посмотри расход","После нескольких заправок появится средний расход и самые дешёвые АЗС."]]],
+ ["🔧","Сервис и напоминания",[
+  ["service","Добавь запись о сервисе","Например, последнюю замену масла. Отметь «Напомнить в следующий раз».","Проверь, подставился ли обычный интервал."],
+  ["servicescan","Отсканируй счёт или деталь","Счёт из сервиса, боковину шины или наклейку аккумулятора."],
+  ["specs","Открой «Данные моей машины»","Внизу страницы машины. Попробуй скопировать одну строку или всё."],
+  ["done","Отметь напоминание как выполненное","В карточке «Следующее» нажми «Отметить как выполненное»."]]],
+ ["🚗","Остальное",[
+  ["ticket","Добавь штраф","Хоть выдуманный, со сроком оплаты. Потом можно удалить."],
+  ["mod","Добавь модификацию","С фото до и после, если у тебя есть проект."],
+  ["mileage","Обнови пробег","На странице машины нажми на строку с пробегом."],
+  ["costs","Посмотри расходы","Сколько машина стоила в этом году."]]],
+ ["👤","Профиль и аккаунт",[
+  ["profile","Заполни профиль","Ник, фото, город. За это есть значок!"],
+  ["badges","Посмотри значки","Какие ты уже получил?"],
+  ["signout","Выйди и войди снова","Профиль → Аккаунт → Выйти. После входа все данные должны вернуться."],
+  ["settings","Попробуй настройки","Тёмную тему, другой язык и резервную копию."]]],
+ ["💬","Отзыв",[
+  ["feedback","Оставь отзыв","Что нравится, что раздражает, чего не хватает. <a href=\"/feedback\">Форма отзыва</a>."],
+  ["twoweeks","Пользуйся 2 недели","Записывай заправки и сервис, когда они происходят. Так мы видим, как приложение работает каждый день."]]]]};
+
+const T={
+en:{hFb:"Feedback",h1:"Thanks for testing MYKARR! 🙌",lead:"This is your test list. Go through it at your own pace, tick off what you've done, and write anything that feels odd, broken or missing in the feedback form.",
+prog:"Done",bH:"Before you start",b1:"You need an Android phone. The iPhone version comes later.",b2:"Use MYKARR as you normally would, with your real car. The more real the data, the better the test.",
+b3:"Keep the app on your phone for <b>at least 2 weeks</b> and open it now and then.",b4:"Nothing is “wrong”. If something isn't clear, that's our mistake, and it's important to know.",
+eH:"Done? Tell us how it went!",eP:"Every piece of feedback, even a short one, helps make MYKARR better.",eB:"Leave feedback",reset:"Start the list over",
+lHome:"Home",lPriv:"Privacy Policy",lTerms:"Terms of Service"},
+ru:{hFb:"Отзывы",h1:"Спасибо, что тестируешь MYKARR! 🙌",lead:"Это твой список для теста. Иди по пунктам в своём темпе, отмечай сделанное, а всё, что кажется странным, сломанным или чего не хватает, пиши в отзывах.",
+prog:"Сделано",bH:"Перед началом",b1:"Нужен телефон на Android. Версия для iPhone будет позже.",b2:"Пользуйся MYKARR как обычно, со своей настоящей машиной. Чем реальнее данные, тем лучше тест.",
+b3:"Держи приложение на телефоне <b>минимум 2 недели</b> и заглядывай в него время от времени.",b4:"Здесь нет ничего «неправильного». Если что-то непонятно, это наша ошибка, и об этом важно знать.",
+eH:"Готово? Расскажи, как прошло!",eP:"Каждый отзыв, даже короткий, помогает сделать MYKARR лучше.",eB:"Оставить отзыв",reset:"Начать список заново",
+lHome:"Главная",lPriv:"Политика конфиденциальности",lTerms:"Условия использования"}};
+const LV={};document.querySelectorAll('[data-t]').forEach(e=>LV[e.dataset.t]=e.innerHTML);T.lv=LV;
+
+let done={};try{done=JSON.parse(localStorage.getItem('mykarr_test_done')||'{}')}catch(e){}
+const save=()=>{try{localStorage.setItem('mykarr_test_done',JSON.stringify(done))}catch(e){}};
+let lang='lv';
+
+function render(){const wrap=document.getElementById('list');wrap.innerHTML='';let all=0,n=0;
+  LIST[lang].forEach(([ico,title,items])=>{
+    const h=document.createElement('h2');h.className='sec';h.innerHTML='<span class="ico">'+ico+'</span>'+title;wrap.appendChild(h);
+    items.forEach(([id,t,d,tip])=>{all++;if(done[id])n++;
+      const el=document.createElement('div');el.className='item'+(done[id]?' done':'');el.setAttribute('role','checkbox');el.setAttribute('aria-checked',!!done[id]);
+      el.innerHTML='<div class="box">✓</div><div><div class="t">'+t+'</div><div class="d">'+d+'</div>'+(tip?'<span class="tip">💡 '+tip+'</span>':'')+'</div>';
+      el.onclick=e=>{if(e.target.tagName==='A')return;done[id]=!done[id];if(!done[id])delete done[id];save();render();};
+      wrap.appendChild(el);});});
+  document.getElementById('pDone').textContent=n;document.getElementById('pAll').textContent=all;
+  document.getElementById('pBar').style.width=(all?100*n/all:0)+'%';}
+
+function setLang(l){lang=T[l]?l:'lv';const d=T[lang];
+  document.querySelectorAll('[data-t]').forEach(e=>{if(d[e.dataset.t]!==undefined)e.innerHTML=d[e.dataset.t]});
+  document.documentElement.lang=lang;document.querySelectorAll('.langs button').forEach(b=>b.classList.toggle('on',b.dataset.set===lang));
+  try{localStorage.setItem('lang',lang)}catch(e){}render();}
+document.querySelectorAll('.langs button').forEach(b=>b.onclick=()=>setLang(b.dataset.set));
+document.getElementById('reset').onclick=()=>{done={};save();render();window.scrollTo({top:0,behavior:'smooth'});};
+let start='lv';try{start=localStorage.getItem('lang')||'lv'}catch(e){}
+setLang(start);
+</script>
+</body>
+</html>
