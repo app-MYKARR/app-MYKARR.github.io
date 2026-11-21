@@ -18,6 +18,10 @@ header{border-bottom:1px solid var(--line)}
 .logo span{color:var(--accent)}
 .langs button{background:none;border:1px solid var(--line);color:var(--muted);border-radius:8px;padding:4px 10px;font:inherit;font-size:14px;cursor:pointer;margin-left:4px}
 .langs button.on{border-color:var(--accent);color:var(--accent-ink);font-weight:600}
+header .bar{flex-wrap:nowrap;gap:10px}
+.fblink,.langs{white-space:nowrap;flex:none}.langs{display:flex}
+@media (max-width:480px){header .bar{padding:12px 14px;gap:8px}.langs button{padding:3px 7px;margin-left:3px;font-size:13px}.fblink{padding:5px 10px;font-size:13px}}
+.fblink{font-size:14px;font-weight:600;text-decoration:none;color:#06312b;background:var(--accent);padding:5px 12px;border-radius:8px}
 main{max-width:720px;margin:0 auto;padding:28px 20px 60px}
 h1{font-size:32px;line-height:1.2;margin:4px 0 6px}
 .lead{color:var(--muted);margin:0 0 26px;font-size:17px}
@@ -69,6 +73,7 @@ footer nav a{color:var(--muted);text-decoration:none;margin-right:14px}
 <body>
 <header><div class="bar">
   <a class="logo" href="/">MY<span>KARR</span></a>
+  <a class="fblink" href="/feedback" data-t="hFb">Atsauksmes</a>
   <div class="langs"><button data-set="lv">LV</button><button data-set="en">EN</button><button data-set="ru">RU</button></div>
 </div></header>
 
@@ -156,7 +161,7 @@ q3:"Tell us more",aScan:"📸 Scanning",aFuel:"⛽ Fuel",aService:"🔧 Service"
 q4:"Who are you? (optional)",lName:"Name or nickname",lDevice:"Phone model",lReply:"I'd like a reply by email",lEmail:"Your email",send:"Send feedback",
 privacy:"By sending, you agree that we receive your feedback. More: <a href=\"/privacy\">privacy policy</a>.",
 tH:"Thanks, got it!",tP:"Your feedback helps make MYKARR better. If you asked for a reply, I'll write back soon.",tBack:"Back to home",
-lPriv:"Privacy Policy",lTerms:"Terms of Service",
+hFb:"Feedback",lPriv:"Privacy Policy",lTerms:"Terms of Service",
 faces:["Really not happy","Could be better","It's okay","I like it","Love it!"],
 prompts:{bug:["What went wrong?","What happened, and what did you do just before? The more detail, the faster I can fix it.","Tip: if you can, mention the screen and the steps, e.g. \"Fuel → scanned a receipt → litres were wrong\"."],
 idea:["What would make MYKARR better?","What would you like MYKARR to do? How would it help you?","Tip: ideas from real drivers decide what gets built next."],
@@ -169,7 +174,7 @@ q3:"Расскажи подробнее",aScan:"📸 Сканирование",a
 q4:"Кто ты? (необязательно)",lName:"Имя или ник",lDevice:"Модель телефона",lReply:"Хочу ответ на e-mail",lEmail:"Твой e-mail",send:"Отправить отзыв",
 privacy:"Отправляя, ты соглашаешься, что мы получим твой отзыв. Подробнее: <a href=\"/privacy\">политика конфиденциальности</a>.",
 tH:"Спасибо, получили!",tP:"Твой отзыв помогает сделать MYKARR лучше. Если ты просил ответ, я скоро напишу.",tBack:"На главную",
-lPriv:"Политика конфиденциальности",lTerms:"Условия использования",
+hFb:"Отзывы",lPriv:"Политика конфиденциальности",lTerms:"Условия использования",
 faces:["Совсем не доволен","Могло быть лучше","Нормально","Нравится","Обожаю!"],
 prompts:{bug:["Что пошло не так?","Что случилось и что ты делал перед этим? Чем подробнее, тем быстрее исправлю.","Совет: укажи экран и шаги, например «Топливо → сканировал чек → литры неверные»."],
 idea:["Что сделало бы MYKARR лучше?","Что бы ты хотел, чтобы MYKARR умел? Как это тебе поможет?","Совет: идеи настоящих водителей решают, что будет сделано дальше."],

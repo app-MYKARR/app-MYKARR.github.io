@@ -18,6 +18,10 @@ header{border-bottom:1px solid var(--line)}
 .logo span{color:var(--accent)}
 .langs button{background:none;border:1px solid var(--line);color:var(--muted);border-radius:8px;padding:4px 10px;font:inherit;font-size:14px;cursor:pointer;margin-left:4px}
 .langs button.on{border-color:var(--accent);color:var(--accent-ink);font-weight:600}
+header .bar{flex-wrap:nowrap;gap:10px}
+.fblink,.langs{white-space:nowrap;flex:none}.langs{display:flex}
+.fblink{font-size:14px;font-weight:600;text-decoration:none;color:#06312b;background:var(--accent);padding:5px 12px;border-radius:8px}
+@media (max-width:480px){header .bar{padding:12px 14px;gap:8px}.langs button{padding:3px 7px;margin-left:3px;font-size:13px}.fblink{padding:5px 10px;font-size:13px}}
 .hero{background:var(--hero)}
 .hero .in{max-width:960px;margin:0 auto;padding:48px 20px 52px;display:flex;gap:36px;align-items:center;flex-wrap:wrap}
 .hero img{width:120px;height:120px;border-radius:28px;box-shadow:0 8px 24px rgba(0,0,0,.15)}
@@ -58,6 +62,7 @@ footer nav a{color:var(--muted);text-decoration:none;margin-right:14px}
 <body>
 <header><div class="bar">
   <a class="logo" href="/">MY<span>KARR</span></a>
+  <a class="fblink" href="/feedback" data-t="hFb">Atsauksmes</a>
   <div class="langs">
     <button data-set="lv">LV</button><button data-set="en">EN</button><button data-set="ru">RU</button>
   </div>
@@ -81,11 +86,11 @@ footer nav a{color:var(--muted);text-decoration:none;margin-right:14px}
   <h2 data-t="whatH">Ko MYKARR prot</h2>
   <p class="lead" data-t="whatP">Viss, kas saistīts ar tavu auto, vienā vietā. Strādā arī bez interneta un bez konta.</p>
   <div class="grid">
-    <div class="card"><div class="ic">📸</div><h3 data-t="f1h">Nofočē, mēs aizpildīsim</h3><p data-t="f1p">Degvielas čeki, servisa rēķini, pat riepas sāns. Nofotografē, pārbaudi, saglabā.</p></div>
-    <div class="card"><div class="ic">🔔</div><h3 data-t="f2h">Vienmēr zini, kas nākamais</h3><p data-t="f2p">Eļļas maiņa, riepas, tehniskā apskate, apdrošināšana. Atgādinājums pienāks laikus.</p></div>
-    <div class="card"><div class="ic">📋</div><h3 data-t="f3h">Auto dati, gatavi veikalam</h3><p data-t="f3p">Riepu izmēri, eļļa, akumulators. Nokopē un aizsūti, nav jālien ar lukturīti ap mašīnu.</p></div>
-    <div class="card"><div class="ic">⛽</div><h3 data-t="f4h">Degviela un patēriņš</h3><p data-t="f4p">Uzpildes, vidējais patēriņš un tas, kurās stacijās tu tērē visvairāk.</p></div>
-    <div class="card"><div class="ic">💶</div><h3 data-t="f5h">Izdevumi un sodi</h3><p data-t="f5p">Cik auto izmaksā gadā, un atgādinājums, līdz kuram datumam samaksāt sodu.</p></div>
+    <div class="card"><div class="ic">📸</div><h3 data-t="f1h">Nofočē, mēs aizpildīsim</h3><p data-t="f1p">degvielas čekus, servisa rēķinus un pat tava auto detaļas.</p></div>
+    <div class="card"><div class="ic">🔔</div><h3 data-t="f2h">Nekad nepalaid garām</h3><p data-t="f2p">apkopes ar mūsu modernajiem atgādinājumiem.</p></div>
+    <div class="card"><div class="ic">📋</div><h3 data-t="f3h">Tava auto dati</h3><p data-t="f3p">vienā vietā. Atver, apskaties, nokopē!</p></div>
+    <div class="card"><div class="ic">⛽</div><h3 data-t="f4h">Degvielas</h3><p data-t="f4p">uzpildes, vidējais patēriņš un izdevīgākās stacijas.</p></div>
+    <div class="card"><div class="ic">💶</div><h3 data-t="f5h">Izdevumi</h3><p data-t="f5p">ērti pārskatāmi un viegli saprotami.</p></div>
     <div class="card"><div class="ic">🔧</div><h3 data-t="f6h">Tūnings un projekti</h3><p data-t="f6p">Detaļas, bildes pirms un pēc, un cik esi ieguldījis savā projektā.</p></div>
   </div>
 
@@ -95,7 +100,7 @@ footer nav a{color:var(--muted);text-decoration:none;margin-right:14px}
     <li data-t="s1">Atver šo lapu telefonā un nospied <b>Lejupielādēt Android versiju</b>.</li>
     <li data-t="s2">Kad lejupielāde beigusies, atver failu <b>mykarr.apk</b>.</li>
     <li data-t="s3">Ja telefons jautā, atļauj instalēt lietotnes no šī avota (piemēram, Chrome), un atgriezies.</li>
-    <li data-t="s4">Nospied <b>Instalēt</b>. Gatavs, MYKARR ir tavā telefonā!</li>
+    <li data-t="s4">Nospied <b>Instalēt</b>. Gatavs... MYKARR ir tavā telefonā!</li>
   </ol>
   <div class="note" data-t="note">Google Play Protect var brīdināt par “nezināmu lietotni”, jo MYKARR vēl nav veikalā. Nospied <b>Sīkāka informācija → Tik un tā instalēt</b>. Kad iznāks jauna versija, vienkārši lejupielādē un instalē to pāri vecajai, tavi dati paliks.</div>
 
@@ -104,7 +109,7 @@ footer nav a{color:var(--muted);text-decoration:none;margin-right:14px}
   <div class="road">
     <div class="row"><span class="tag now" data-t="tNow">Tagad</span><div><b data-t="r1h">Beta testēšana</b><span class="d" data-t="r1p">Pirmie draugi un auto entuziasti testē lietotni un saka, kas jāuzlabo.</span></div></div>
     <div class="row"><span class="tag soon" data-t="tSoon">Drīzumā</span><div><b data-t="r2h">Google Play veikals</b><span class="d" data-t="r2p">Instalēšana un atjauninājumi ar vienu pieskārienu.</span></div></div>
-    <div class="row"><span class="tag soon" data-t="tSoon2">Drīzumā</span><div><b data-t="r3h">iPhone versija</b><span class="d" data-t="r3p">MYKARR nāks arī uz iOS. Tavs konts un dati būs pieejami abos.</span></div></div>
+    <div class="row"><span class="tag soon" data-t="tSoon2">Drīzumā</span><div><b data-t="r3h">App Store</b><span class="d" data-t="r3p">MYKARR nāks arī uz iOS. Tavs konts un dati būs pieejami abos.</span></div></div>
     <div class="row"><span class="tag later" data-t="tLater">Vēlāk</span><div><b data-t="r4h">Auto kopīgošana</b><span class="d" data-t="r4p">Viena mašīna, visa ģimene: kopīgi ieraksti un atgādinājumi.</span></div></div>
     <div class="row"><span class="tag later" data-t="tLater2">Vēlāk</span><div><b data-t="r5h">Kopiena</b><span class="d" data-t="r5p">Jautājumi un atbildes, pamācības un tirgus detaļām un auto ar pilnu servisa vēsturi.</span></div></div>
     <div class="row"><span class="tag later" data-t="tLater3">Vēlāk</span><div><b data-t="r6h">MYKARR plus</b><span class="d" data-t="r6p">Papildu iespējas tiem, kam vajag vairāk. Pamata lietotne vienmēr paliks bez maksas.</span></div></div>
@@ -112,7 +117,7 @@ footer nav a{color:var(--muted);text-decoration:none;margin-right:14px}
 
   <div class="fb">
     <h2 data-t="fbH">Tu esi viens no pirmajiem</h2>
-    <p data-t="fbP">Pastāsti, kas patīk, kas kaitina un kā tev pietrūkst. Katra ziņa tiek izlasīta.</p>
+    <p data-t="fbP">Pastāsti, kas patīk, kas kaitina un kā tev pietrūkst.</p>
     <a class="btn" href="/feedback" data-t="fbB">Atstāt atsauksmi</a>
   </div>
 </main>
@@ -126,44 +131,44 @@ footer nav a{color:var(--muted);text-decoration:none;margin-right:14px}
 const T={
 en:{beta:"Beta testing",title:"Your car's best mate",sub:"Services, fuel, reminders, tickets and builds in one place. Snap a receipt and MYKARR fills in the rest.",dl:"Download for Android",meta:"Beta version 1.0.0 · APK file, about 68 MB · Free",
 whatH:"What MYKARR does",whatP:"Everything about your car in one place. Works without internet and without an account too.",
-f1h:"Snap it, we'll fill it in",f1p:"Fuel receipts, service invoices, even a tire sidewall. Take a photo, check it, save.",
-f2h:"Always know what's next",f2p:"Oil change, tires, inspection, insurance. The reminder arrives in time.",
-f3h:"Your car's details, ready for the shop",f3p:"Tire sizes, oil, battery. Copy and send, no crawling around the car with a flashlight.",
-f4h:"Fuel and consumption",f4p:"Fill-ups, average consumption and which stations you spend the most at.",
-f5h:"Costs and tickets",f5p:"What your car costs per year, and a reminder before a ticket is due.",
+f1h:"Snap it, we'll read",f1p:"fuel receipts, service invoices and even your car's parts.",
+f2h:"Never miss",f2p:"a service again, thanks to our smart reminders.",
+f3h:"Your car's details",f3p:"all in one place. Open, look, copy!",
+f4h:"Fuel",f4p:"fill-ups, average consumption and the best-value stations.",
+f5h:"Expenses",f5p:"easy to look through and simple to understand.",
 f6h:"Builds and projects",f6p:"Parts, before and after photos, and how much you've put into your project.",
 howH:"How to install",howP:"MYKARR isn't on Google Play yet, so the beta installs from a file. It takes a minute.",
-s1:"Open this page on your phone and tap <b>Download for Android</b>.",s2:"When the download finishes, open <b>mykarr.apk</b>.",s3:"If your phone asks, allow installing apps from this source (for example Chrome), then go back.",s4:"Tap <b>Install</b>. Done, MYKARR is on your phone!",
+s1:"Open this page on your phone and tap <b>Download for Android</b>.",s2:"When the download finishes, open <b>mykarr.apk</b>.",s3:"If your phone asks, allow installing apps from this source (for example Chrome), then go back.",s4:"Tap <b>Install</b>. Done... MYKARR is on your phone!",
 note:"Google Play Protect may warn about an “unknown app” because MYKARR isn't in the store yet. Tap <b>More details → Install anyway</b>. When a new version comes out, just download it and install over the old one. Your data stays.",
 roadH:"What's next",roadP:"MYKARR grows together with its first users. Here's the plan:",tNow:"Now",tSoon:"Soon",tSoon2:"Soon",tLater:"Later",tLater2:"Later",tLater3:"Later",
 r1h:"Beta testing",r1p:"The first friends and car enthusiasts test the app and tell us what to improve.",
 r2h:"Google Play",r2p:"Install and update with one tap.",
-r3h:"iPhone version",r3p:"MYKARR is coming to iOS too. Your account and data will work on both.",
+r3h:"App Store",r3p:"MYKARR is coming to iOS too. Your account and data will work on both.",
 r4h:"Car sharing",r4p:"One car, the whole family: shared records and reminders.",
 r5h:"Community",r5p:"Questions and answers, tutorials, and a marketplace for parts and cars with full service history.",
 r6h:"MYKARR plus",r6p:"Extra features for those who want more. The basic app always stays free.",
-fbH:"You're one of the first",fbP:"Tell us what you like, what bugs you and what's missing. Every message gets read.",fbB:"Leave feedback",
-lFb:"Feedback",lPriv:"Privacy Policy",lTerms:"Terms of Service",lDel:"Delete account"},
+fbH:"You're one of the first",fbP:"Tell us what you like, what bugs you and what you're missing.",fbB:"Leave feedback",
+hFb:"Feedback",lFb:"Feedback",lPriv:"Privacy Policy",lTerms:"Terms of Service",lDel:"Delete account"},
 ru:{beta:"Бета-тестирование",title:"Лучший друг твоей машины",sub:"Сервис, топливо, напоминания, штрафы и тюнинг в одном месте. Сфоткай чек, а MYKARR заполнит остальное.",dl:"Скачать для Android",meta:"Бета-версия 1.0.0 · APK-файл, около 68 МБ · Бесплатно",
 whatH:"Что умеет MYKARR",whatP:"Всё о твоей машине в одном месте. Работает и без интернета, и без аккаунта.",
-f1h:"Сфоткай, а мы заполним",f1p:"Чеки с заправки, счета из сервиса, даже боковина шины. Сфоткай, проверь, сохрани.",
-f2h:"Всегда знай, что дальше",f2p:"Замена масла, шины, техосмотр, страховка. Напоминание придёт вовремя.",
-f3h:"Данные машины, готовые для магазина",f3p:"Размеры шин, масло, аккумулятор. Скопируй и отправь, не надо ползать с фонариком.",
-f4h:"Топливо и расход",f4p:"Заправки, средний расход и на каких заправках ты тратишь больше всего.",
-f5h:"Расходы и штрафы",f5p:"Сколько машина стоит в год, и напоминание, до какого числа оплатить штраф.",
+f1h:"Сфоткай, а мы прочитаем",f1p:"чеки с заправки, счета из сервиса и даже детали твоей машины.",
+f2h:"Больше не пропустишь",f2p:"ни одного сервиса с нашими умными напоминаниями.",
+f3h:"Данные твоей машины",f3p:"в одном месте. Открой, посмотри, скопируй!",
+f4h:"Топливо",f4p:"заправки, средний расход и самые выгодные АЗС.",
+f5h:"Расходы",f5p:"удобно просматривать и легко понять.",
 f6h:"Тюнинг и проекты",f6p:"Детали, фото до и после, и сколько ты вложил в свой проект.",
 howH:"Как установить",howP:"MYKARR пока нет в Google Play, поэтому бета ставится из файла. Это займёт минуту.",
-s1:"Открой эту страницу на телефоне и нажми <b>Скачать для Android</b>.",s2:"Когда загрузка закончится, открой <b>mykarr.apk</b>.",s3:"Если телефон спросит, разреши установку приложений из этого источника (например, Chrome) и вернись назад.",s4:"Нажми <b>Установить</b>. Готово, MYKARR у тебя на телефоне!",
+s1:"Открой эту страницу на телефоне и нажми <b>Скачать для Android</b>.",s2:"Когда загрузка закончится, открой <b>mykarr.apk</b>.",s3:"Если телефон спросит, разреши установку приложений из этого источника (например, Chrome) и вернись назад.",s4:"Нажми <b>Установить</b>. Готово... MYKARR у тебя на телефоне!",
 note:"Google Play Protect может предупредить о «неизвестном приложении», потому что MYKARR ещё нет в магазине. Нажми <b>Подробнее → Всё равно установить</b>. Когда выйдет новая версия, просто скачай её и установи поверх старой. Твои данные останутся.",
 roadH:"Что дальше",roadP:"MYKARR растёт вместе со своими первыми пользователями. Вот план:",tNow:"Сейчас",tSoon:"Скоро",tSoon2:"Скоро",tLater:"Позже",tLater2:"Позже",tLater3:"Позже",
 r1h:"Бета-тестирование",r1p:"Первые друзья и автолюбители тестируют приложение и подсказывают, что улучшить.",
 r2h:"Google Play",r2p:"Установка и обновления в одно касание.",
-r3h:"Версия для iPhone",r3p:"MYKARR появится и на iOS. Твой аккаунт и данные будут работать на обоих.",
+r3h:"App Store",r3p:"MYKARR появится и на iOS. Твой аккаунт и данные будут работать на обоих.",
 r4h:"Общая машина",r4p:"Одна машина, вся семья: общие записи и напоминания.",
 r5h:"Сообщество",r5p:"Вопросы и ответы, инструкции и рынок деталей и машин с полной историей обслуживания.",
 r6h:"MYKARR plus",r6p:"Дополнительные возможности для тех, кому нужно больше. Базовое приложение всегда останется бесплатным.",
-fbH:"Ты один из первых",fbP:"Расскажи, что нравится, что раздражает и чего не хватает. Каждое сообщение читаем.",fbB:"Оставить отзыв",
-lFb:"Отзывы",lPriv:"Политика конфиденциальности",lTerms:"Условия использования",lDel:"Удаление аккаунта"}};
+fbH:"Ты один из первых",fbP:"Расскажи, что нравится, что раздражает и чего тебе не хватает.",fbB:"Оставить отзыв",
+hFb:"Отзывы",lFb:"Отзывы",lPriv:"Политика конфиденциальности",lTerms:"Условия использования",lDel:"Удаление аккаунта"}};
 const LV={};document.querySelectorAll('[data-t]').forEach(e=>LV[e.dataset.t]=e.innerHTML);T.lv=LV;
 function setLang(l){const d=T[l]||LV;document.querySelectorAll('[data-t]').forEach(e=>{if(d[e.dataset.t])e.innerHTML=d[e.dataset.t]});
 document.documentElement.lang=l;document.querySelectorAll('.langs button').forEach(b=>b.classList.toggle('on',b.dataset.set===l));
