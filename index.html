@@ -31,6 +31,8 @@ h1{font-size:38px;line-height:1.15;margin:12px 0 10px}
 .sub{font-size:18px;color:var(--muted);margin:0 0 22px}
 .btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:#06312b;font-weight:700;text-decoration:none;padding:14px 22px;border-radius:14px;font-size:17px}
 .btn:hover{filter:brightness(1.05)}
+.btn2{display:inline-flex;align-items:center;gap:8px;margin-top:12px;border:2px solid var(--accent);color:var(--accent-ink);font-weight:700;text-decoration:none;padding:10px 18px;border-radius:14px;font-size:15px}
+.btn2:hover{background:var(--accent);color:#06312b}
 .meta{font-size:14px;color:var(--muted);margin-top:10px}
 main{max-width:960px;margin:0 auto;padding:10px 20px 50px}
 h2{font-size:26px;margin:48px 0 6px}
@@ -78,7 +80,8 @@ footer nav a{color:var(--muted);text-decoration:none;margin-right:14px}
       <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3a1 1 0 0 1 1 1v9.59l3.3-3.3a1 1 0 1 1 1.4 1.42l-5 5a1 1 0 0 1-1.4 0l-5-5a1 1 0 1 1 1.4-1.42L11 13.59V4a1 1 0 0 1 1-1zM5 19a1 1 0 1 0 0 2h14a1 1 0 1 0 0-2H5z"/></svg>
       <span data-t="dl">Lejupielādēt Android versiju</span>
     </a>
-    <div class="meta" data-t="meta">Beta versija 1.0.0 · APK fails, apm. 70 MB · Bez maksas</div>
+    <div class="meta" data-t="meta">Beta versija 1.0.0 · APK fails, apm. 68 MB · Bez maksas</div>
+    <a class="btn2" href="/testeri" data-t="tester">🧪 Esmu testeris</a>
   </div>
 </div></section>
 
@@ -123,7 +126,7 @@ footer nav a{color:var(--muted);text-decoration:none;margin-right:14px}
 </main>
 
 <footer><div class="bar">
-  <nav><a href="/feedback" data-t="lFb">Atsauksmes</a><a href="/privacy" data-t="lPriv">Privātuma politika</a><a href="/terms" data-t="lTerms">Lietošanas noteikumi</a><a href="/delete-account" data-t="lDel">Konta dzēšana</a></nav>
+  <nav><a href="/testeri" data-t="lTest">Testētājiem</a><a href="/feedback" data-t="lFb">Atsauksmes</a><a href="/privacy" data-t="lPriv">Privātuma politika</a><a href="/terms" data-t="lTerms">Lietošanas noteikumi</a><a href="/delete-account" data-t="lDel">Konta dzēšana</a></nav>
   <span>© 2026 Ralfs Karro · Mārupe</span>
 </div></footer>
 
@@ -148,7 +151,7 @@ r4h:"Car sharing",r4p:"One car, the whole family: shared records and reminders."
 r5h:"Community",r5p:"Questions and answers, tutorials, and a marketplace for parts and cars with full service history.",
 r6h:"MYKARR plus",r6p:"Extra features for those who want more. The basic app always stays free.",
 fbH:"You're one of the first",fbP:"Tell us what you like, what bugs you and what you're missing.",fbB:"Leave feedback",
-hFb:"Feedback",lFb:"Feedback",lPriv:"Privacy Policy",lTerms:"Terms of Service",lDel:"Delete account"},
+tester:"🧪 I'm a tester",lTest:"For testers",hFb:"Feedback",lFb:"Feedback",lPriv:"Privacy Policy",lTerms:"Terms of Service",lDel:"Delete account"},
 ru:{beta:"Бета-тестирование",title:"Лучший друг твоей машины",sub:"Сервис, топливо, напоминания, штрафы и тюнинг в одном месте. Сфоткай чек, а MYKARR заполнит остальное.",dl:"Скачать для Android",meta:"Бета-версия 1.0.0 · APK-файл, около 68 МБ · Бесплатно",
 whatH:"Что умеет MYKARR",whatP:"Всё о твоей машине в одном месте. Работает и без интернета, и без аккаунта.",
 f1h:"Сфоткай, а мы прочитаем",f1p:"чеки с заправки, счета из сервиса и даже детали твоей машины.",
@@ -168,7 +171,7 @@ r4h:"Общая машина",r4p:"Одна машина, вся семья: о�
 r5h:"Сообщество",r5p:"Вопросы и ответы, инструкции и рынок деталей и машин с полной историей обслуживания.",
 r6h:"MYKARR plus",r6p:"Дополнительные возможности для тех, кому нужно больше. Базовое приложение всегда останется бесплатным.",
 fbH:"Ты один из первых",fbP:"Расскажи, что нравится, что раздражает и чего тебе не хватает.",fbB:"Оставить отзыв",
-hFb:"Отзывы",lFb:"Отзывы",lPriv:"Политика конфиденциальности",lTerms:"Условия использования",lDel:"Удаление аккаунта"}};
+tester:"🧪 Я тестировщик",lTest:"Тестировщикам",hFb:"Отзывы",lFb:"Отзывы",lPriv:"Политика конфиденциальности",lTerms:"Условия использования",lDel:"Удаление аккаунта"}};
 const LV={};document.querySelectorAll('[data-t]').forEach(e=>LV[e.dataset.t]=e.innerHTML);T.lv=LV;
 function setLang(l){const d=T[l]||LV;document.querySelectorAll('[data-t]').forEach(e=>{if(d[e.dataset.t])e.innerHTML=d[e.dataset.t]});
 document.documentElement.lang=l;document.querySelectorAll('.langs button').forEach(b=>b.classList.toggle('on',b.dataset.set===l));
